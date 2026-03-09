@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sénse MedSpa — Medicina Estética</title>
+<meta name="description" content="Sénse MedSpa — Clínica de medicina estética en Santiago. Depilación láser, inyectables, remodelamiento corporal. Precios accesibles, calidad premium.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F2EDE4;
+    --sand-dark: #E8E0D4;
+    --obsidian: #16120E;
+    --warm-black: #1E1A15;
+    --stone: #6B6157;
+    --gold: #B8965A;
+    --gold-pale: #D4B483;
+    --cream: #FAF7F2;
+    --white: #FDFCFA;
+    --border: rgba(107,97,87,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--obsidian);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── CURSOR ─── */
+  body { cursor: none; }
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, width 0.2s, height 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.4s ease, width 0.3s, height 0.3s, border-color 0.3s;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s, padding 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(250,247,242,0.95);
+    backdrop-filter: blur(12px);
+    padding: 16px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--obsidian);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--stone);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--obsidian);
+    color: var(--cream) !important;
+    padding: 10px 24px;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--obsidian) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1px; background: var(--obsidian); transition: 0.3s; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 80px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 86px);
+    font-weight: 300;
+    line-height: 1.08;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--stone);
+    line-height: 1.8;
+    max-width: 420px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--obsidian);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 16px 36px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold); color: var(--obsidian); }
+  .btn-ghost {
+    color: var(--stone);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 8s ease;
+    animation: slowZoom 12s ease infinite alternate;
+  }
+  @keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--cream) 0%, transparent 60%);
+    z-index: 1;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--obsidian);
+    line-height: 1;
+  }
+  .stat-label { font-size: 11px; letter-spacing: 1.5px; color: var(--stone); text-transform: uppercase; }
+
+  /* ─── SECCIÓN GENÉRICA ─── */
+  section { padding: 120px 80px; }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub {
+    font-size: 15px;
+    color: var(--stone);
+    line-height: 1.8;
+    max-width: 580px;
+  }
+
+  /* ─── CONCEPTO ─── */
+  #concepto {
+    background: var(--obsidian);
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 120px 80px;
+  }
+  #concepto .section-title { color: var(--cream); }
+  #concepto .section-sub { color: rgba(250,247,242,0.55); }
+  .concepto-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .concepto-item {
+    background: var(--obsidian);
+    padding: 36px 32px;
+    transition: background 0.3s;
+  }
+  .concepto-item:hover { background: rgba(184,150,90,0.12); }
+  .concepto-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .concepto-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .concepto-item p {
+    font-size: 13px;
+    color: rgba(250,247,242,0.5);
+    line-height: 1.6;
+  }
+
+  /* ─── SERVICIOS ─── */
+  #servicios { background: var(--sand); }
+  .servicios-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 80px;
+  }
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .servicio-card {
+    background: var(--cream);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+    cursor: default;
+  }
+  .servicio-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .servicio-card:hover::before { transform: scaleX(1); }
+  .servicio-card:hover { background: var(--white); transform: translateY(-4px); }
+  .servicio-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 60px;
+    color: var(--sand-dark);
+    line-height: 1;
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+  .servicio-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--obsidian);
+  }
+  .servicio-card p {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  .servicio-precio {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .servicio-desde {
+    font-size: 10px;
+    color: var(--stone);
+    letter-spacing: 1px;
+  }
+  .servicio-tag {
+    display: inline-block;
+    background: var(--obsidian);
+    color: var(--cream);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 16px;
+  }
+
+  /* ─── PRECIOS ─── */
+  #precios { background: var(--cream); }
+  .precios-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+  }
+  .precios-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 14px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--stone);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    color: var(--obsidian);
+    border-bottom-color: var(--gold);
+  }
+  .tab-btn:hover { color: var(--obsidian); }
+  .precio-panel { display: none; }
+  .precio-panel.active { display: block; }
+  .precio-table { width: 100%; border-collapse: collapse; }
+  .precio-table tr { border-bottom: 1px solid var(--border); }
+  .precio-table tr:last-child { border-bottom: none; }
+  .precio-table td {
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--stone);
+  }
+  .precio-table td:first-child {
+    color: var(--obsidian);
+    font-weight: 400;
+    width: 55%;
+  }
+  .precio-table td.precio-val {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    text-align: right;
+  }
+  .precio-table td.precio-desc {
+    font-size: 12px;
+    color: var(--stone);
+    width: 30%;
+  }
+  .membresia-box {
+    background: var(--obsidian);
+    color: var(--cream);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    margin-top: 48px;
+  }
+  .membresia-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+  .membresia-box p { font-size: 14px; color: rgba(250,247,242,0.55); line-height: 1.6; }
+  .membresia-price {
+    text-align: right;
+    white-space: nowrap;
+  }
+  .membresia-price .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .membresia-price .small { font-size: 11px; letter-spacing: 2px; color: rgba(250,247,242,0.4); }
+
+  /* ─── AGENDAR ─── */
+  #agendar {
+    background: var(--sand);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .agendar-left {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .agendar-right {
+    background: var(--obsidian);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .form-row { margin-bottom: 24px; }
+  .form-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.4);
+    margin-bottom: 10px;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+  .form-input::placeholder { color: rgba(250,247,242,0.25); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    background: rgba(184,150,90,0.06);
+  }
+  .form-select { color: rgba(250,247,242,0.6); }
+  .form-select option { background: var(--obsidian); color: var(--cream); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--obsidian);
+    border: none;
+    padding: 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--gold-pale); }
+  .form-note {
+    font-size: 11px;
+    color: rgba(250,247,242,0.3);
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  #form-success {
+    display: none;
+    text-align: center;
+    padding: 40px;
+  }
+  #form-success h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  #form-success p { color: rgba(250,247,242,0.55); font-size: 14px; }
+
+  /* ─── TESTIMONIOS ─── */
+  #testimonios { background: var(--cream); text-align: center; }
+  .testimonios-header { margin-bottom: 64px; }
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+    text-align: left;
+  }
+  .testimonio-card {
+    background: var(--cream);
+    padding: 48px 40px;
+  }
+  .stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; margin-bottom: 24px; }
+  .testimonio-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--obsidian);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .testimonio-author { font-size: 12px; letter-spacing: 2px; color: var(--stone); text-transform: uppercase; }
+
+  /* ─── CONTACTO BAR ─── */
+  .contacto-bar {
+    background: var(--gold);
+    padding: 32px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contacto-bar p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--obsidian);
+  }
+  .contacto-bar a {
+    background: var(--obsidian);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 14px 32px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+  .contacto-bar a:hover { background: var(--warm-black); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--obsidian);
+    padding: 80px 80px 40px;
+    color: rgba(250,247,242,0.4);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 40px;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--cream);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-desc { font-size: 13px; line-height: 1.7; max-width: 280px; }
+  .footer-col h5 {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(250,247,242,0.4);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+  .footer-col p { font-size: 13px; line-height: 1.8; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .footer-social { display: flex; gap: 16px; }
+  .footer-social a {
+    color: rgba(250,247,242,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+  }
+  .footer-social a:hover { color: var(--gold); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── MOBILE NAV ─── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--obsidian);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--gold); }
+  .close-menu {
+    position: absolute;
+    top: 28px; right: 32px;
+    font-size: 28px;
+    color: var(--cream);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav { padding: 20px 32px; }
+    nav.scrolled { padding: 14px 32px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 120px 32px 60px; }
+    .hero-right { height: 50vw; }
+    .hero-overlay { background: linear-gradient(to bottom, var(--cream) 0%, transparent 50%); }
+    section { padding: 80px 32px; }
+    #concepto { grid-template-columns: 1fr; gap: 48px; padding: 80px 32px; }
+    .concepto-right { grid-template-columns: 1fr; }
+    .servicios-header { grid-template-columns: 1fr; gap: 24px; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .precios-header { grid-template-columns: 1fr; gap: 24px; }
+    #agendar { grid-template-columns: 1fr; }
+    .agendar-left { padding: 64px 32px; }
+    .agendar-right { padding: 48px 32px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .testimonios-grid { grid-template-columns: 1fr; }
+    .contacto-bar { flex-direction: column; gap: 24px; text-align: center; padding: 40px 32px; }
+    footer { padding: 60px 32px 32px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .hero-stats { flex-wrap: wrap; gap: 32px; }
+    .membresia-box { grid-template-columns: 1fr; gap: 24px; padding: 36px; }
+    .membresia-price { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">✕</button>
+  <a href="#concepto" onclick="toggleMenu()">Nosotros</a>
+  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+  <a href="#precios" onclick="toggleMenu()">Precios</a>
+  <a href="#testimonios" onclick="toggleMenu()">Testimonios</a>
+  <a href="#agendar" onclick="toggleMenu()">Agendar</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">Sénse<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#concepto">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#precios">Precios</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#agendar" class="nav-cta">Agendar hora</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">MedSpa · Santiago, Chile</span>
+    <h1 class="hero-title">Tu mejor<br>versión,<br><em>con ciencia.</em></h1>
+    <p class="hero-sub">Medicina estética de primera calidad a precios accesibles. Depilación láser, inyectables y remodelamiento corporal en un solo lugar.</p>
+    <div class="hero-actions">
+      <a href="#agendar" class="btn-primary">Agenda tu consulta gratis</a>
+      <a href="#servicios" class="btn-ghost">Ver tratamientos</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Tratamientos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">20%</span>
+        <span class="stat-label">Bajo mercado</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">No invasivo</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-overlay"></div>
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=80" alt="Sénse MedSpa">
+  </div>
+</section>
+
+<!-- CONCEPTO -->
+<section id="concepto">
+  <div class="concepto-left reveal">
+    <span class="section-tag">Por qué Sénse</span>
+    <h2 class="section-title">Medicina estética<br><em>sin compromisos</em></h2>
+    <p class="section-sub" style="margin-bottom:32px;">Creemos que verse y sentirse bien no debería ser un privilegio. Combinamos tecnología de primer nivel, profesionales certificados y una experiencia de spa en cada visita — todo a precios que tienen sentido.</p>
+    <p class="section-sub">Sin letra chica. Sin presión. Sin esperar semanas para una hora.</p>
+  </div>
+  <div class="concepto-right reveal">
+    <div class="concepto-item">
+      <span class="concepto-icon">✦</span>
+      <h4>Equipos de primera</h4>
+      <p>Soprano Ice Platinum para láser. BTL Aesthetics para remodelamiento. Los mismos que usan las mejores clínicas del mundo.</p>
+    </div>
+    <div class="concepto-item">
+      <span class="concepto-icon">◎</span>
+      <h4>Precios ~20% bajo mercado</h4>
+      <p>Sin sacrificar calidad. Operamos de forma eficiente para que pagues menos por el mismo resultado.</p>
+    </div>
+    <div class="concepto-item">
+      <span class="concepto-icon">◈</span>
+      <h4>Consulta gratuita</h4>
+      <p>Toda visita comienza con una evaluación sin costo ni compromiso. Conocemos tu caso antes de recomendar cualquier tratamiento.</p>
+    </div>
+    <div class="concepto-item">
+      <span class="concepto-icon">◇</span>
+      <h4>Experiencia Medspa</h4>
+      <p>No somos una consulta médica fría. Sénse es un espacio diseñado para que cada visita se sienta como un momento para ti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="servicios-header">
+    <div class="reveal">
+      <span class="section-tag">Tratamientos</span>
+      <h2 class="section-title">Todo lo que<br>necesitas,<br><em>en un lugar.</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="section-sub">Nos especializamos en los tratamientos de mayor demanda y resultado comprobado. Sin experimentar contigo — solo lo que funciona.</p>
+    </div>
+  </div>
+  <div class="servicios-grid">
+    <div class="servicio-card reveal">
+      <div class="servicio-num">01</div>
+      <span class="servicio-tag">Más popular</span>
+      <h3>Depilación Láser</h3>
+      <p>Eliminación definitiva del vello no deseado con tecnología Soprano Ice Platinum. Para todo tipo de piel, todo el año. Sin dolor, sin tiempo de recuperación.</p>
+      <div>
+        <div class="servicio-desde">Desde</div>
+        <div class="servicio-precio">$25.000 / sesión</div>
+      </div>
+    </div>
+    <div class="servicio-card reveal">
+      <div class="servicio-num">02</div>
+      <h3>Inyectables</h3>
+      <p>Toxina botulínica, ácido hialurónico y bioestimuladores aplicados por médicos certificados. Resultados naturales que duran de 4 a 8 meses.</p>
+      <div>
+        <div class="servicio-desde">Desde</div>
+        <div class="servicio-precio">$120.000 / zona</div>
+      </div>
+    </div>
+    <div class="servicio-card reveal">
+      <div class="servicio-num">03</div>
+      <h3>Remodelamiento Corporal</h3>
+      <p>Reducción de grasa localizada, tensado de piel y estimulación de colágeno con equipos BTL Aesthetics. Resultados visibles desde la primera sesión.</p>
+      <div>
+        <div class="servicio-desde">Desde</div>
+        <div class="servicio-precio">$80.000 / sesión</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:48px;" class="reveal">
+    <a href="#agendar" class="btn-primary">Agenda tu evaluación gratuita</a>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="precios-header">
+    <div class="reveal">
+      <span class="section-tag">Tarifas</span>
+      <h2 class="section-title">Precios<br><em>transparentes.</em></h2>
+    </div>
+    <div class="reveal">
+      <p class="section-sub">Sin letra chica, sin sorpresas. Los precios que ves son los que pagas. Y con nuestra membresía anual, ahorras desde el primer mes.</p>
+    </div>
+  </div>
+
+  <div class="precios-tabs">
+    <button class="tab-btn active" onclick="showTab('laser')">Depilación Láser</button>
+    <button class="tab-btn" onclick="showTab('inyectables')">Inyectables</button>
+    <button class="tab-btn" onclick="showTab('corporal')">Rem. Corporal</button>
+  </div>
+
+  <div id="tab-laser" class="precio-panel active reveal">
+    <table class="precio-table">
+      <tr><td>Bozo / Mentón</td><td class="precio-desc">1 zona</td><td class="precio-val">$25.000</td></tr>
+      <tr><td>Axilas</td><td class="precio-desc">1 zona</td><td class="precio-val">$30.000</td></tr>
+      <tr><td>Ingles</td><td class="precio-desc">1 zona</td><td class="precio-val">$35.000</td></tr>
+      <tr><td>Piernas completas</td><td class="precio-desc">2 zonas</td><td class="precio-val">$70.000</td></tr>
+      <tr><td>Cuerpo completo</td><td class="precio-desc">Paquete completo</td><td class="precio-val">$150.000</td></tr>
+      <tr><td>Pack 6 sesiones (cualquier zona)</td><td class="precio-desc">Ahorra 15%</td><td class="precio-val">Desde $127.000</td></tr>
+    </table>
+  </div>
+
+  <div id="tab-inyectables" class="precio-panel reveal">
+    <table class="precio-table">
+      <tr><td>Toxina botulínica — frente</td><td class="precio-desc">Botox</td><td class="precio-val">$120.000</td></tr>
+      <tr><td>Toxina botulínica — 3 zonas</td><td class="precio-desc">Botox</td><td class="precio-val">$190.000</td></tr>
+      <tr><td>Ácido hialurónico — labios</td><td class="precio-desc">Filler 1ml</td><td class="precio-val">$180.000</td></tr>
+      <tr><td>Ácido hialurónico — pómulos</td><td class="precio-desc">Filler 1ml</td><td class="precio-val">$200.000</td></tr>
+      <tr><td>Bioestimulador de colágeno</td><td class="precio-desc">Sculptra / Radiesse</td><td class="precio-val">$250.000</td></tr>
+    </table>
+  </div>
+
+  <div id="tab-corporal" class="precio-panel reveal">
+    <table class="precio-table">
+      <tr><td>Criolipólisis — 1 zona</td><td class="precio-desc">BTL</td><td class="precio-val">$100.000</td></tr>
+      <tr><td>HIFU Corporal</td><td class="precio-desc">Flacidez</td><td class="precio-val">$120.000</td></tr>
+      <tr><td>HIFU Facial — efecto lifting</td><td class="precio-desc">Rejuvenecimiento</td><td class="precio-val">$150.000</td></tr>
+      <tr><td>Radiofrecuencia — abdomen</td><td class="precio-desc">Tensado de piel</td><td class="precio-val">$80.000</td></tr>
+      <tr><td>Pack remodelamiento 8 sesiones</td><td class="precio-desc">Ahorra 20%</td><td class="precio-val">Desde $512.000</td></tr>
+    </table>
+  </div>
+
+  <div class="membresia-box reveal">
+    <div>
+      <h3>Membresía Sénse Anual ✦</h3>
+      <p style="margin-top:12px;">Incluye 1 sesión de botox (frente), 20% de descuento en todos los tratamientos durante el año, acceso prioritario a agenda y consultas de seguimiento sin costo.</p>
+    </div>
+    <div class="membresia-price">
+      <div class="big">$120.000</div>
+      <div class="small">CLP / año</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="testimonios-header reveal">
+    <span class="section-tag">Testimonios</span>
+    <h2 class="section-title">Lo que dicen<br><em>nuestros pacientes</em></h2>
+  </div>
+  <div class="testimonios-grid">
+    <div class="testimonio-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Vine con desconfianza porque otros lugares me cobraban el doble. La diferencia de Sénse es que notas que el equipo realmente sabe lo que hace — y el ambiente es increíble."</blockquote>
+      <div class="testimonio-author">Valentina M. — Providencia</div>
+    </div>
+    <div class="testimonio-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Llevo 3 sesiones de depilación y los resultados son brutales. Además la atención es como ningún otro lugar — te explican todo antes de hacer cualquier cosa."</blockquote>
+      <div class="testimonio-author">Camila R. — Las Condes</div>
+    </div>
+    <div class="testimonio-card reveal">
+      <div class="stars">★★★★★</div>
+      <blockquote>"El botox quedó perfectamente natural. Tenía miedo de quedar congelada pero la doctora fue súper cuidadosa. Ya agendé para el remodelamiento corporal."</blockquote>
+      <div class="testimonio-author">Andrea V. — Ñuñoa</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO BAR -->
+<div class="contacto-bar reveal">
+  <p>¿Tienes dudas? Te respondemos en menos de 2 horas.</p>
+  <a href="https://wa.me/56912345678?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank">Escribir por WhatsApp</a>
+</div>
+
+<!-- AGENDAR -->
+<section id="agendar">
+  <div class="agendar-left">
+    <span class="section-tag reveal">Agenda</span>
+    <h2 class="section-title reveal">Tu primera<br>consulta es<br><em>gratis.</em></h2>
+    <p class="section-sub reveal" style="margin-top:24px;">Cuéntanos qué te interesa y te contactamos para confirmar tu hora. Sin compromiso — la consulta inicial no tiene costo.</p>
+    <div style="margin-top:48px; display:flex; flex-direction:column; gap:20px;" class="reveal">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;">📍</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">Ubicación</div>
+          <div style="font-size:14px;margin-top:2px;">Las Condes, Santiago</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;">🕐</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">Horario</div>
+          <div style="font-size:14px;margin-top:2px;">Lun – Vie 9:00 – 20:00 · Sáb 10:00 – 16:00</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div style="width:40px;height:40px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;">💬</div>
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);">WhatsApp</div>
+          <div style="font-size:14px;margin-top:2px;">+56 9 1234 5678</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="agendar-right">
+    <div id="contact-form">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--cream);margin-bottom:8px;">Solicita tu hora</h3>
+      <p style="font-size:13px;color:rgba(250,247,242,0.4);margin-bottom:36px;">Te contactamos en menos de 2 horas hábiles.</p>
+      <div class="form-grid">
+        <div class="form-row">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-input" id="f-nombre" placeholder="Tu nombre">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Apellido</label>
+          <input type="text" class="form-input" id="f-apellido" placeholder="Tu apellido">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Teléfono / WhatsApp</label>
+        <input type="tel" class="form-input" id="f-telefono" placeholder="+56 9 xxxx xxxx">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" id="f-email" placeholder="tu@email.com">
+      </div>
+      <div class="form-row">
+        <label class="form-label">Tratamiento de interés</label>
+        <select class="form-select form-input" id="f-servicio">
+          <option value="" disabled selected>Selecciona un tratamiento</option>
+          <option>Depilación Láser</option>
+          <option>Inyectables (Botox / Filler)</option>
+          <option>Remodelamiento Corporal</option>
+          <option>Membresía Anual</option>
+          <option>Quiero conocer todas las opciones</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label class="form-label">¿Algo que quieras contarnos? (opcional)</label>
+        <textarea class="form-textarea form-input" id="f-mensaje" placeholder="Cuéntanos brevemente tu caso o consulta..."></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Solicitar hora gratuita →</button>
+      <p class="form-note">Al enviar, aceptas que te contactemos por WhatsApp o email para confirmar tu cita. No compartimos tus datos con terceros.</p>
+    </div>
+    <div id="form-success">
+      <div style="font-size:48px;margin-bottom:24px;">✦</div>
+      <h3>¡Solicitud recibida!</h3>
+      <p style="margin-top:12px;">Te contactaremos en menos de 2 horas hábiles para confirmar tu hora. Mientras tanto, puedes escribirnos directo por WhatsApp si tienes alguna duda.</p>
+      <a href="https://wa.me/56912345678" target="_blank" style="display:inline-block;margin-top:28px;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Abrir WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <span class="footer-logo">Sénse<span>.</span></span>
+      <p class="footer-desc">Medicina estética de primer nivel, accesible para todos. Porque verse bien no debería costar una fortuna.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Tratamientos</h5>
+      <ul>
+        <li><a href="#servicios">Depilación Láser</a></li>
+        <li><a href="#servicios">Inyectables</a></li>
+        <li><a href="#servicios">Rem. Corporal</a></li>
+        <li><a href="#precios">Membresía Anual</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Nosotros</h5>
+      <ul>
+        <li><a href="#concepto">Por qué Sénse</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#agendar">Agendar hora</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contacto</h5>
+      <p>Las Condes, Santiago<br><br>Lun – Vie: 9:00 – 20:00<br>Sábado: 10:00 – 16:00<br><br>+56 9 1234 5678</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sénse MedSpa. Todos los derechos reservados.</span>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // CURSOR
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
+  function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx+'px'; ring.style.top = ry+'px'; requestAnimationFrame(animateRing); }
+  animateRing();
+  document.querySelectorAll('a, button, .servicio-card, .concepto-item').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width = '60px'; ring.style.height = '60px'; ring.style.borderColor = 'var(--gold)'; });
+    el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.borderColor = 'var(--gold)'; });
+  });
+
+  // NAV SCROLL
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // MOBILE MENU
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // REVEAL ON SCROLL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+
+  // TABS PRECIOS
+  function showTab(name) {
+    document.querySelectorAll('.precio-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // FORM
+  function submitForm() {
+    const nombre = document.getElementById('f-nombre').value.trim();
+    const telefono = document.getElementById('f-telefono').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const servicio = document.getElementById('f-servicio').value;
+    if (!nombre || !telefono || !email || !servicio) {
+      alert('Por favor completa los campos obligatorios: nombre, teléfono, email y tratamiento de interés.');
+      return;
+    }
+    // Aquí podrías integrar Formspree o EmailJS para envío real
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // WhatsApp fallback
+    const msg = encodeURIComponent(`Hola! Soy ${nombre}, me interesa ${servicio}. Mi email es ${email}.`);
+    setTimeout(() => {
+      window.open(`https://wa.me/56912345678?text=${msg}`, '_blank');
+    }, 1500);
+  }
+</script>
+</body>
+</html>

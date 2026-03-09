@@ -83,14 +83,15 @@
   .nav-logo span { color: var(--gold); }
   .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     list-style: none;
+    align-items: center;
   }
   .nav-links a {
     text-decoration: none;
     color: var(--stone);
-    font-size: 12px;
-    letter-spacing: 2.5px;
+    font-size: 11px;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
     transition: color 0.2s;
   }
@@ -746,13 +747,13 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">Sénse<span>.</span></a>
+  <a href="#" class="nav-logo">Sénse <em>MedSpa</em></a>
   <ul class="nav-links">
-    <li><a href="#concepto">Nosotros</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#precios">Precios</a></li>
+    <li><a href="#concepto">Por qué Sénse</a></li>
+    <li><a href="#servicios">Tratamientos</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
-    <li><a href="#agendar" class="nav-cta">Agendar hora</a></li>
+    <li><a href="#contactanos">Contáctanos</a></li>
+    <li><a href="#agendar" class="nav-cta">Solicita tu Hora</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -800,22 +801,30 @@
   </div>
   <div class="concepto-right reveal">
     <div class="concepto-item">
-      <span class="concepto-icon">✦</span>
+      <span class="concepto-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3.5 7-7 11C8.5 16 5 13 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      </span>
       <h4>Equipos de primera</h4>
       <p>Soprano Ice Platinum para láser. BTL Aesthetics para remodelamiento. Los mismos que usan las mejores clínicas del mundo.</p>
     </div>
     <div class="concepto-item">
-      <span class="concepto-icon">◎</span>
+      <span class="concepto-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </span>
       <h4>Precios ~20% bajo mercado</h4>
       <p>Sin sacrificar calidad. Operamos de forma eficiente para que pagues menos por el mismo resultado.</p>
     </div>
     <div class="concepto-item">
-      <span class="concepto-icon">◈</span>
+      <span class="concepto-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </span>
       <h4>Consulta gratuita</h4>
       <p>Toda visita comienza con una evaluación sin costo ni compromiso. Conocemos tu caso antes de recomendar cualquier tratamiento.</p>
     </div>
     <div class="concepto-item">
-      <span class="concepto-icon">◇</span>
+      <span class="concepto-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </span>
       <h4>Experiencia Medspa</h4>
       <p>No somos una consulta médica fría. Sénse es un espacio diseñado para que cada visita se sienta como un momento para ti.</p>
     </div>
@@ -839,28 +848,16 @@
       <span class="servicio-tag">Más popular</span>
       <h3>Depilación Láser</h3>
       <p>Eliminación definitiva del vello no deseado con tecnología Soprano Ice Platinum. Para todo tipo de piel, todo el año. Sin dolor, sin tiempo de recuperación.</p>
-      <div>
-        <div class="servicio-desde">Desde</div>
-        <div class="servicio-precio">$25.000 / sesión</div>
-      </div>
     </div>
     <div class="servicio-card reveal">
       <div class="servicio-num">02</div>
       <h3>Inyectables</h3>
       <p>Toxina botulínica, ácido hialurónico y bioestimuladores aplicados por médicos certificados. Resultados naturales que duran de 4 a 8 meses.</p>
-      <div>
-        <div class="servicio-desde">Desde</div>
-        <div class="servicio-precio">$120.000 / zona</div>
-      </div>
     </div>
     <div class="servicio-card reveal">
       <div class="servicio-num">03</div>
       <h3>Remodelamiento Corporal</h3>
       <p>Reducción de grasa localizada, tensado de piel y estimulación de colágeno con equipos BTL Aesthetics. Resultados visibles desde la primera sesión.</p>
-      <div>
-        <div class="servicio-desde">Desde</div>
-        <div class="servicio-precio">$80.000 / sesión</div>
-      </div>
     </div>
   </div>
   <div style="text-align:center; margin-top:48px;" class="reveal">
@@ -868,66 +865,7 @@
   </div>
 </section>
 
-<!-- PRECIOS -->
-<section id="precios">
-  <div class="precios-header">
-    <div class="reveal">
-      <span class="section-tag">Tarifas</span>
-      <h2 class="section-title">Precios<br><em>transparentes.</em></h2>
-    </div>
-    <div class="reveal">
-      <p class="section-sub">Sin letra chica, sin sorpresas. Los precios que ves son los que pagas. Y con nuestra membresía anual, ahorras desde el primer mes.</p>
-    </div>
-  </div>
 
-  <div class="precios-tabs">
-    <button class="tab-btn active" onclick="showTab('laser')">Depilación Láser</button>
-    <button class="tab-btn" onclick="showTab('inyectables')">Inyectables</button>
-    <button class="tab-btn" onclick="showTab('corporal')">Rem. Corporal</button>
-  </div>
-
-  <div id="tab-laser" class="precio-panel active reveal">
-    <table class="precio-table">
-      <tr><td>Bozo / Mentón</td><td class="precio-desc">1 zona</td><td class="precio-val">$25.000</td></tr>
-      <tr><td>Axilas</td><td class="precio-desc">1 zona</td><td class="precio-val">$30.000</td></tr>
-      <tr><td>Ingles</td><td class="precio-desc">1 zona</td><td class="precio-val">$35.000</td></tr>
-      <tr><td>Piernas completas</td><td class="precio-desc">2 zonas</td><td class="precio-val">$70.000</td></tr>
-      <tr><td>Cuerpo completo</td><td class="precio-desc">Paquete completo</td><td class="precio-val">$150.000</td></tr>
-      <tr><td>Pack 6 sesiones (cualquier zona)</td><td class="precio-desc">Ahorra 15%</td><td class="precio-val">Desde $127.000</td></tr>
-    </table>
-  </div>
-
-  <div id="tab-inyectables" class="precio-panel reveal">
-    <table class="precio-table">
-      <tr><td>Toxina botulínica — frente</td><td class="precio-desc">Botox</td><td class="precio-val">$120.000</td></tr>
-      <tr><td>Toxina botulínica — 3 zonas</td><td class="precio-desc">Botox</td><td class="precio-val">$190.000</td></tr>
-      <tr><td>Ácido hialurónico — labios</td><td class="precio-desc">Filler 1ml</td><td class="precio-val">$180.000</td></tr>
-      <tr><td>Ácido hialurónico — pómulos</td><td class="precio-desc">Filler 1ml</td><td class="precio-val">$200.000</td></tr>
-      <tr><td>Bioestimulador de colágeno</td><td class="precio-desc">Sculptra / Radiesse</td><td class="precio-val">$250.000</td></tr>
-    </table>
-  </div>
-
-  <div id="tab-corporal" class="precio-panel reveal">
-    <table class="precio-table">
-      <tr><td>Criolipólisis — 1 zona</td><td class="precio-desc">BTL</td><td class="precio-val">$100.000</td></tr>
-      <tr><td>HIFU Corporal</td><td class="precio-desc">Flacidez</td><td class="precio-val">$120.000</td></tr>
-      <tr><td>HIFU Facial — efecto lifting</td><td class="precio-desc">Rejuvenecimiento</td><td class="precio-val">$150.000</td></tr>
-      <tr><td>Radiofrecuencia — abdomen</td><td class="precio-desc">Tensado de piel</td><td class="precio-val">$80.000</td></tr>
-      <tr><td>Pack remodelamiento 8 sesiones</td><td class="precio-desc">Ahorra 20%</td><td class="precio-val">Desde $512.000</td></tr>
-    </table>
-  </div>
-
-  <div class="membresia-box reveal">
-    <div>
-      <h3>Membresía Sénse Anual ✦</h3>
-      <p style="margin-top:12px;">Incluye 1 sesión de botox (frente), 20% de descuento en todos los tratamientos durante el año, acceso prioritario a agenda y consultas de seguimiento sin costo.</p>
-    </div>
-    <div class="membresia-price">
-      <div class="big">$120.000</div>
-      <div class="small">CLP / año</div>
-    </div>
-  </div>
-</section>
 
 <!-- TESTIMONIOS -->
 <section id="testimonios">
@@ -957,7 +895,7 @@
 <!-- CONTACTO BAR -->
 <div class="contacto-bar reveal">
   <p>¿Tienes dudas? Te respondemos en menos de 2 horas.</p>
-  <a href="https://wa.me/56912345678?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank">Escribir por WhatsApp</a>
+  <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank">Escribir por WhatsApp</a>
 </div>
 
 <!-- AGENDAR -->
@@ -1020,7 +958,7 @@
           <option>Depilación Láser</option>
           <option>Inyectables (Botox / Filler)</option>
           <option>Remodelamiento Corporal</option>
-          <option>Membresía Anual</option>
+
           <option>Quiero conocer todas las opciones</option>
         </select>
       </div>
@@ -1035,16 +973,40 @@
       <div style="font-size:48px;margin-bottom:24px;">✦</div>
       <h3>¡Solicitud recibida!</h3>
       <p style="margin-top:12px;">Te contactaremos en menos de 2 horas hábiles para confirmar tu hora. Mientras tanto, puedes escribirnos directo por WhatsApp si tienes alguna duda.</p>
-      <a href="https://wa.me/56912345678" target="_blank" style="display:inline-block;margin-top:28px;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Abrir WhatsApp →</a>
+      <a href="https://wa.me/56988946512" target="_blank" style="display:inline-block;margin-top:28px;color:var(--gold);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Abrir WhatsApp →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
+<!-- CONTÁCTANOS -->
+<section id="contactanos" style="background:var(--obsidian); padding: 100px 5vw;">
+  <div style="max-width:900px; margin:0 auto; text-align:center;" class="reveal">
+    <span class="section-tag" style="color:var(--gold);">Contáctanos</span>
+    <h2 class="section-title" style="color:var(--white); margin: 20px 0 16px;">Estamos aquí<br><em>para ayudarte</em></h2>
+    <p class="section-sub" style="color:rgba(250,247,242,0.6); margin-bottom:56px;">Resuelve tus dudas por el canal que prefieras. Te respondemos en menos de 2 horas hábiles.</p>
+    <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" style="display:flex; align-items:center; gap:14px; background:#25D366; color:#fff; text-decoration:none; padding:20px 36px; border-radius:4px; font-family:'Jost',sans-serif; font-size:15px; font-weight:400; letter-spacing:1px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="mailto:wcomber@hotmail.com" style="display:flex; align-items:center; gap:14px; background:transparent; color:var(--white); text-decoration:none; padding:20px 36px; border-radius:4px; border:1px solid rgba(250,247,242,0.2); font-family:'Jost',sans-serif; font-size:15px; font-weight:400; letter-spacing:1px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(250,247,242,0.2)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        wcomber@hotmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
 <footer>
   <div class="footer-top">
     <div>
-      <span class="footer-logo">Sénse<span>.</span></span>
+      <span class="footer-logo">Sénse <em>MedSpa</em></span>
       <p class="footer-desc">Medicina estética de primer nivel, accesible para todos. Porque verse bien no debería costar una fortuna.</p>
     </div>
     <div class="footer-col">
@@ -1053,7 +1015,7 @@
         <li><a href="#servicios">Depilación Láser</a></li>
         <li><a href="#servicios">Inyectables</a></li>
         <li><a href="#servicios">Rem. Corporal</a></li>
-        <li><a href="#precios">Membresía Anual</a></li>
+
       </ul>
     </div>
     <div class="footer-col">
@@ -1066,7 +1028,9 @@
     </div>
     <div class="footer-col">
       <h5>Contacto</h5>
-      <p>Las Condes, Santiago<br><br>Lun – Vie: 9:00 – 20:00<br>Sábado: 10:00 – 16:00<br><br>+56 9 1234 5678</p>
+      <p>Las Condes, Santiago<br><br>Lun – Vie: 9:00 – 20:00<br>Sábado: 10:00 – 16:00<br><br>
+      <a href="https://wa.me/56988946512" target="_blank" style="color:var(--gold);text-decoration:none;">+56 9 8894 6512</a><br>
+      <a href="mailto:wcomber@hotmail.com" style="color:var(--gold);text-decoration:none;">wcomber@hotmail.com</a></p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1074,7 +1038,7 @@
     <div class="footer-social">
       <a href="#">Instagram</a>
       <a href="#">TikTok</a>
-      <a href="#">WhatsApp</a>
+      <a href="https://wa.me/56988946512" target="_blank">WhatsApp</a>
     </div>
   </div>
 </footer>
@@ -1133,7 +1097,7 @@
     // WhatsApp fallback
     const msg = encodeURIComponent(`Hola! Soy ${nombre}, me interesa ${servicio}. Mi email es ${email}.`);
     setTimeout(() => {
-      window.open(`https://wa.me/56912345678?text=${msg}`, '_blank');
+      window.open(`https://wa.me/56988946512?text=${msg}`, '_blank');
     }, 1500);
   }
 </script>

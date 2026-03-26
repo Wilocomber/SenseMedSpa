@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sand: #F2EDE4;
-    --sand-dark: #E8E0D4;
-    --obsidian: #16120E;
-    --warm-black: #1E1A15;
-    --stone: #6B6157;
-    --gold: #B8965A;
-    --gold-pale: #D4B483;
-    --cream: #FAF7F2;
-    --white: #FDFCFA;
-    --border: rgba(107,97,87,0.18);
+    --sand: #F5F0E8;
+    --sand-dark: #E8EDE9;
+    --obsidian: #1C3A30;
+    --warm-black: #3D6B58;
+    --stone: #527A6A;
+    --gold: #B07A2A;
+    --gold-pale: #C9A84C;
+    --cream: #F5F0E8;
+    --white: #FAFAF8;
+    --border: rgba(28,58,48,0.18);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -73,6 +73,7 @@
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
+    color: #F5F0E8 !important;
     font-family: 'Cormorant Garamond', serif;
     font-size: 26px;
     font-weight: 400;
@@ -89,24 +90,24 @@
   }
   .nav-links a {
     text-decoration: none;
-    color: var(--stone);
+    color: #B5C9BC;
     font-size: 11px;
     letter-spacing: 1.8px;
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover { color: #F5F0E8; }
   .nav-cta {
-    background: var(--obsidian);
+    background: #B07A2A;
     color: var(--cream) !important;
     padding: 10px 24px;
     font-size: 11px !important;
     letter-spacing: 2px !important;
     transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: var(--gold) !important; color: var(--obsidian) !important; }
+  .nav-cta:hover { background: #8A5E1E !important; color: #F5F0E8 !important; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { width: 24px; height: 1px; background: var(--obsidian); transition: 0.3s; }
+  .hamburger span { width: 24px; height: 1px; background: #F5F0E8; transition: 0.3s; }
 
   /* ─── HERO ─── */
   #hero {
@@ -745,11 +746,11 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" onclick="toggleMenu()">✕</button>
-  <a href="#concepto" onclick="toggleMenu()">Nosotros</a>
-  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
-  <a href="#precios" onclick="toggleMenu()">Precios</a>
+  <a href="#concepto" onclick="toggleMenu()">Por qué Sénse</a>
+  <a href="#servicios" onclick="toggleMenu()">Tratamientos</a>
   <a href="#testimonios" onclick="toggleMenu()">Testimonios</a>
-  <a href="#agendar" onclick="toggleMenu()">Agendar</a>
+  <a href="#contactanos" onclick="toggleMenu()">Contáctanos</a>
+  <a href="#agendar" onclick="toggleMenu()" style="color:var(--gold);">Solicita tu Hora</a>
 </div>
 
 <!-- NAV -->
@@ -1004,9 +1005,9 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         WhatsApp
       </a>
-      <a href="mailto:wcomber@hotmail.com" style="display:flex; align-items:center; gap:14px; background:transparent; color:var(--white); text-decoration:none; padding:20px 36px; border-radius:4px; border:1px solid rgba(250,247,242,0.2); font-family:'Jost',sans-serif; font-size:15px; font-weight:400; letter-spacing:1px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(250,247,242,0.2)'">
+      <a href="/cdn-cgi/l/email-protection#e89f8b87858a8d9aa880879c85898184c68b8785" style="display:flex; align-items:center; gap:14px; background:transparent; color:var(--white); text-decoration:none; padding:20px 36px; border-radius:4px; border:1px solid rgba(250,247,242,0.2); font-family:'Jost',sans-serif; font-size:15px; font-weight:400; letter-spacing:1px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(250,247,242,0.2)'">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        wcomber@hotmail.com
+        <span class="__cf_email__" data-cfemail="8ff8ece0e2edeafdcfe7e0fbe2eee6e3a1ece0e2">[email&#160;protected]</span>
       </a>
     </div>
   </div>
@@ -1044,7 +1045,7 @@
       <h5>Contacto</h5>
       <p>Las Condes, Santiago<br><br>Lun – Vie: 9:00 – 20:00<br>Sábado: 10:00 – 16:00<br><br>
       <a href="https://wa.me/56988946512" target="_blank" style="color:var(--gold);text-decoration:none;">+56 9 8894 6512</a><br>
-      <a href="mailto:wcomber@hotmail.com" style="color:var(--gold);text-decoration:none;">wcomber@hotmail.com</a></p>
+      <a href="/cdn-cgi/l/email-protection#80f7e3efede2e5f2c0e8eff4ede1e9ecaee3efed" style="color:var(--gold);text-decoration:none;"><span class="__cf_email__" data-cfemail="7c0b1f13111e190e3c141308111d1510521f1311">[email&#160;protected]</span></a></p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1057,7 +1058,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // CURSOR
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
@@ -1124,15 +1125,4 @@
 
   function goToSlide(index) {
     const slides = document.querySelectorAll('.hero-right img');
-    const dots = document.querySelectorAll('.hero-dot');
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].style.background = 'rgba(250,247,242,0.3)';
-    currentSlide = index;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].style.background = 'rgba(184,150,90,0.9)';
-  }
-
-  setInterval(() => {
-    goToSlide((currentSlide + 1) % totalSlides);
-  }, 5000);
-</script>
+    const dots = document.querySelector

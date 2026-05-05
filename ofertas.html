@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medicina Estética en Las Condes — Sénse MedSpa</title>
+  <title>Ofertas Especiales — Sénse MedSpa</title>
   <link rel="icon" type="image/png" href="/img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+
 
   :root {
     --sand: #F5F0E8;
@@ -1469,28 +1470,53 @@
     .home-exp-dark, .home-exp-light, .home-ubi-info, .home-ubi-photo, .home-prog-block { padding: 56px 32px; }
   }
 
+  
+
+.page-hero { padding: 140px 48px 80px; text-align: center; }
+.page-hero .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: var(--obsidian); line-height: 1.15; }
+.page-hero h1 em { font-style: italic; color: var(--warm-black); }
+.page-hero .sub { font-size: 18px; color: var(--stone); max-width: 560px; margin: 16px auto 0; }
+
+.ofertas-gate { max-width: 960px; margin: 0 auto; padding: 0 48px 120px; }
+.ofertas-gate-card { background: var(--obsidian); border-radius: 28px; padding: 64px; display: flex; flex-direction: column; align-items: center; text-align: center; color: var(--cream); position: relative; overflow: hidden; }
+.ofertas-gate-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 0%, rgba(140,136,128,0.15) 0%, transparent 60%); }
+.ofertas-gate-card .eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 24px; position: relative; }
+.ofertas-gate-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 44px; font-weight: 300; margin: 0 0 16px; position: relative; line-height: 1.2; }
+.ofertas-gate-card p { font-size: 17px; color: rgba(245,240,232,0.7); max-width: 480px; margin: 0 0 40px; position: relative; line-height: 1.7; }
+.ofertas-form { display: flex; gap: 12px; width: 100%; max-width: 460px; position: relative; }
+.ofertas-form input { flex: 1; padding: 14px 20px; border-radius: 100px; border: 1px solid rgba(245,240,232,0.2); background: rgba(255,255,255,0.07); color: var(--cream); font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none; }
+.ofertas-form input::placeholder { color: rgba(245,240,232,0.4); }
+.ofertas-form button { background: var(--gold); color: #fff; border: none; padding: 14px 28px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+.ofertas-form button:hover { background: #7a7870; }
+.ofertas-legal { font-size: 12px; color: rgba(245,240,232,0.4); margin-top: 16px; position: relative; }
+.ofertas-preview { margin-top: 64px; }
+.ofertas-preview-title { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; text-align: center; }
+.ofertas-blur-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; filter: blur(8px); user-select: none; pointer-events: none; opacity: 0.6; }
+.oferta-blur-card { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px 24px; border: 1px solid rgba(255,255,255,0.1); }
+.oferta-blur-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.oferta-blur-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 8px; }
+.oferta-blur-price { font-size: 28px; font-weight: 300; }
+.oferta-blur-old { font-size: 14px; color: rgba(245,240,232,0.4); text-decoration: line-through; margin-left: 8px; }
+.oferta-blur-desc { font-size: 13px; color: rgba(245,240,232,0.5); margin-top: 10px; line-height: 1.6; }
+
+#ofertas-success { display: none; text-align: center; }
+#ofertas-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; margin-bottom: 12px; }
+#ofertas-success p { color: rgba(245,240,232,0.7); font-size: 16px; }
+
+@media (max-width: 800px) {
+  .page-hero { padding: 120px 24px 60px; }
+  .ofertas-gate { padding: 0 24px 80px; }
+  .ofertas-gate-card { padding: 40px 24px; }
+  .ofertas-form { flex-direction: column; }
+  .ofertas-blur-grid { grid-template-columns: 1fr; }
+}
+
   </style>
 </head>
 <body>
-<!-- POPUP BIENVENIDA -->
-<div id="popup-overlay" class="popup-overlay">
-  <div class="popup-card">
-    <button class="popup-close" onclick="cerrarPopup()">✕</button>
-    <div class="popup-tag">Oferta exclusiva de bienvenida</div>
-    <h2 class="popup-title">15% off<br><em>en tu primera sesión</em></h2>
-    <p class="popup-desc">Déjanos tu correo y recibe tu código de descuento al instante.</p>
-    <form class="popup-form" id="popup-form" onsubmit="submitPopup(event)">
-      <input type="email" class="popup-input" id="popup-email" placeholder="tu@correo.cl" required>
-      <button type="submit" class="popup-btn">Quiero mi descuento →</button>
-    </form>
-    <div class="popup-success" id="popup-success">
-      <div class="popup-check">✓</div>
-      <p>¡Listo! Tu código es <strong>BIENVENIDA15</strong></p>
-      <p class="popup-note">Te lo enviamos a tu correo en breve.</p>
-    </div>
-    <p class="popup-legal">Sin spam. Puedes darte de baja cuando quieras.</p>
-  </div>
-</div>
+
+<!-- CURSOR -->
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -1593,331 +1619,59 @@
 
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">MedSpa · Santiago, Chile</span>
-    <h1 class="hero-title">Tu mejor<br>versión,<br><em>con ciencia.</em></h1>
-    <p class="hero-sub">Medicina estética de primera calidad a precios accesibles. Depilación láser, inyectables y remodelamiento corporal en un solo lugar.</p>
-    <div class="hero-actions">
-      <a href="/agendar.html" class="btn-primary">Agenda tu consulta gratis</a>
-      <a href="/tratamientos.html" class="btn-ghost">Ver tratamientos</a>
-    </div>
+
+<section class="page-hero">
+  <span class="eyebrow">Solo para suscriptores</span>
+  <h1>Ofertas<br><em>Exclusivas</em></h1>
+  <p class="sub">Accede a descuentos y promociones especiales disponibles únicamente para nuestra comunidad.</p>
+</section>
+
+<div class="ofertas-gate reveal">
+  <div class="ofertas-gate-card">
+    <span class="eyebrow">Acceso exclusivo</span>
     
-  </div>
-  <div class="hero-right" id="heroCarousel">
-    <div class="hero-overlay"></div>
-    <img id="slide-0" class="active" src="/img/hero1.png" alt="Inyectables Sénse MedSpa">
-    <img id="slide-1" src="/img/hero2.png" alt="Remodelamiento corporal Sénse MedSpa">
-    <img id="slide-2" src="/img/hero3.png" alt="Depilación láser Sénse MedSpa">
-    <div style="position:absolute;bottom:24px;right:24px;display:flex;gap:8px;z-index:10;">
-      <span class="hero-dot active" onclick="goToSlide(0)" style="width:8px;height:8px;border-radius:50%;background:rgba(184,150,90,0.9);cursor:pointer;transition:background 0.3s;display:block;"></span>
-      <span class="hero-dot" onclick="goToSlide(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(250,247,242,0.3);cursor:pointer;transition:background 0.3s;display:block;"></span>
-      <span class="hero-dot" onclick="goToSlide(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(250,247,242,0.3);cursor:pointer;transition:background 0.3s;display:block;"></span>
+    <div id="ofertas-form-section">
+      <h2>Suscríbete para ver<br>las ofertas</h2>
+      <p>Ingresa tu email y accede al instante a descuentos de hasta 40% en tratamientos seleccionados. Sin spam, solo ofertas reales.</p>
+      <form class="ofertas-form" onsubmit="submitOfertasGate(event)">
+        <input type="email" id="ofertas-gate-email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Ver ofertas →</button>
+      </form>
+      <p class="ofertas-legal">Sin spam. Puedes darte de baja cuando quieras.</p>
     </div>
-  </div>
-</section>
 
-<!-- CONCEPTO -->
-<section id="concepto">
-  <div class="concepto-left reveal">
-    <span class="section-tag">Por qué Sénse</span>
-    <h2 class="section-title">Medicina estética<br><em>sin compromisos</em></h2>
-    <p class="section-sub" style="margin-bottom:32px;">Creemos que verse y sentirse bien no debería ser un privilegio. Combinamos tecnología de primer nivel, profesionales certificados y una experiencia de spa en cada visita — todo a precios que tienen sentido.</p>
-    <p class="section-sub">Sin letra chica. Sin presión. Sin esperar semanas para una hora.</p>
-  </div>
-  <div class="concepto-right reveal">
-    <div class="concepto-item">
-      <span class="concepto-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3.5 7-7 11C8.5 16 5 13 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-      </span>
-      <h4>Equipos de primera</h4>
-      <p>Soprano Ice Platinum para láser. BTL Aesthetics para remodelamiento. Los mismos que usan las mejores clínicas del mundo.</p>
+    <div id="ofertas-success">
+      <h3>¡Bienvenida/o!</h3>
+      <p>Ya puedes ver todas las ofertas exclusivas de esta semana.</p>
     </div>
-    <div class="concepto-item">
-      <span class="concepto-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      </span>
-      <h4>Precios ~20% bajo mercado</h4>
-      <p>Sin sacrificar calidad. Operamos de forma eficiente para que pagues menos por el mismo resultado.</p>
-    </div>
-    <div class="concepto-item">
-      <span class="concepto-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </span>
-      <h4>Consulta gratuita</h4>
-      <p>Toda visita comienza con una evaluación sin costo ni compromiso. Conocemos tu caso antes de recomendar cualquier tratamiento.</p>
-    </div>
-    <div class="concepto-item">
-      <span class="concepto-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </span>
-      <h4>Experiencia Medspa</h4>
-      <p>No somos una consulta médica fría. Sénse es un espacio diseñado para que cada visita se sienta como un momento para ti.</p>
-    </div>
-  </div>
-</section>
 
-<!-- SERVICIOS -->
-<section id="servicios">
-  <div class="servicios-header">
-    <div class="reveal">
-      <span class="section-tag">Tratamientos</span>
-      <h2 class="section-title">Todo lo que<br>necesitas,<br><em>en un lugar.</em></h2>
-    </div>
-    <div class="reveal">
-      <p class="section-sub">Nos especializamos en los tratamientos de mayor demanda y resultado comprobado. Sin experimentar contigo — solo lo que funciona.</p>
-    </div>
-  </div>
-  <div class="servicios-grid">
-    <div class="servicio-card reveal">
-      <div class="servicio-num">01</div>
-      <span class="servicio-tag">Más popular</span>
-      <h3>Depilación Láser</h3>
-      <p>Eliminación definitiva del vello no deseado con tecnología Soprano Ice Platinum. Para todo tipo de piel, todo el año. Sin dolor, sin tiempo de recuperación.</p>
-    </div>
-    <div class="servicio-card reveal">
-      <div class="servicio-num">02</div>
-      <h3>Inyectables</h3>
-      <p>Toxina botulínica, ácido hialurónico y bioestimuladores aplicados por médicos certificados. Resultados naturales que duran de 4 a 8 meses.</p>
-    </div>
-    <div class="servicio-card reveal">
-      <div class="servicio-num">03</div>
-      <h3>Remodelamiento Corporal</h3>
-      <p>Reducción de grasa localizada, tensado de piel y estimulación de colágeno con equipos BTL Aesthetics. Resultados visibles desde la primera sesión.</p>
-    </div>
-  </div>
-  <div style="text-align:center; margin-top:48px;" class="reveal">
-    <a href="/agendar.html" class="btn-primary">Agenda tu evaluación gratuita</a>
-  </div>
-</section>
-
-
-<!-- TRATAMIENTOS HOME -->
-<section id="home-tratamientos">
-  <div class="home-trat-header reveal">
-    <span class="section-tag">Tratamientos</span>
-    <h2 class="section-title">Resultados que se notan,<br><em>de forma natural</em></h2>
-    <p class="section-sub" style="margin-top:16px;">Tecnología de primer nivel, médicos certificados, resultados comprobados.</p>
-  </div>
-  <div class="home-trat-row">
-    <a href="inyectables.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#3D6B58,#1C3A30);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Inyectables</span>
+    <div class="ofertas-preview">
+      <div class="ofertas-preview-title">Vista previa de ofertas</div>
+      <div class="ofertas-blur-grid" id="ofertas-blur">
+        <div class="oferta-blur-card">
+          <div class="oferta-blur-tag">Inyectables</div>
+          <div class="oferta-blur-name">Toxina Botulínica</div>
+          <div class="oferta-blur-price">$••••<span class="oferta-blur-old">$••••</span></div>
+          <div class="oferta-blur-desc">Zona frontales + entrecejo. Incluye evaluación.</div>
+        </div>
+        <div class="oferta-blur-card">
+          <div class="oferta-blur-tag">Corporal</div>
+          <div class="oferta-blur-name">Lipoescultura</div>
+          <div class="oferta-blur-price">$••••<span class="oferta-blur-old">$••••</span></div>
+          <div class="oferta-blur-desc">Paquete 4 sesiones. Abdomen o flancos.</div>
+        </div>
+        <div class="oferta-blur-card">
+          <div class="oferta-blur-tag">Láser</div>
+          <div class="oferta-blur-name">Soprano Ice</div>
+          <div class="oferta-blur-price">$••••<span class="oferta-blur-old">$••••</span></div>
+          <div class="oferta-blur-desc">Piernas completas. Paquete 6 sesiones.</div>
         </div>
       </div>
-      <div class="home-trat-name">Inyectables</div>
-      <div class="home-trat-count">5 tratamientos</div>
-    </a>
-    <a href="corporal.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#527A6A,#3D6B58);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Remodelación</span>
-        </div>
-      </div>
-      <div class="home-trat-name">Remodelación Corporal</div>
-      <div class="home-trat-count">4 tratamientos</div>
-    </a>
-    <a href="laser.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#B5C9BC,#527A6A);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Depilación</span>
-        </div>
-      </div>
-      <div class="home-trat-name">Depilación Láser</div>
-      <div class="home-trat-count">1 tratamiento</div>
-    </a>
-    <a href="facial.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#8C8880,#527A6A);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Tratamientos</span>
-        </div>
-      </div>
-      <div class="home-trat-name">Tratamientos Faciales</div>
-      <div class="home-trat-count">4 tratamientos</div>
-    </a>
-  </div>
-  <div class="home-trat-ctas reveal">
-    <a href="agendar.html" class="btn-primary">Agendar ahora</a>
-    <a href="inyectables.html" class="btn-ghost">Ver todos los tratamientos</a>
-  </div>
-</section>
+    </div>
 
-<!-- EXPERTOS HOME -->
-<section id="home-expertos">
-  <div class="home-exp-dark reveal">
-    <div>
-      <div class="home-exp-eyebrow">Nuestro equipo</div>
-      <h2 class="home-exp-title">Cada tratamiento,<br>en manos certificadas</h2>
-      <p class="home-exp-text">Médicos estetas con formación internacional y años de experiencia. Nunca un tratamiento sin evaluación previa. Nunca un resultado genérico.</p>
-      <div class="home-exp-avatars">
-        <div class="home-exp-avatar">D</div>
-        <div class="home-exp-avatar">D</div>
-        <div class="home-exp-avatar">T</div>
-      </div>
-      <a href="expertos.html" class="btn-primary" style="align-self:flex-start;">Conoce al equipo →</a>
-    </div>
   </div>
-  <div class="home-exp-light reveal">
-    <div>
-      <div class="home-exp-eyebrow">Quiénes somos</div>
-      <h2 class="home-exp-title">Medicina estética<br>sin letra chica</h2>
-      <p class="home-exp-text">Sénse nació para hacer accesible la medicina estética de verdad. Sin presión, sin tratamientos innecesarios, con precios que tienen sentido.</p>
-      <a href="quienes-somos.html" class="btn-ghost">Nuestra historia →</a>
-    </div>
-  </div>
-</section>
+</div>
 
-<!-- UBICACIÓN HOME -->
-<section id="home-ubicacion">
-  <div class="home-ubi-photo">
-    <div class="home-ubi-photo-tag">
-      <div class="home-ubi-photo-name">Sénse MedSpa</div>
-      <div class="home-ubi-photo-addr">Don Carlos 2945, Las Condes</div>
-    </div>
-  </div>
-  <div class="home-ubi-info reveal">
-    <div class="home-ubi-eyebrow">Encuéntranos</div>
-    <h2 class="home-ubi-title">Visítanos en<br><em>Las Condes</em></h2>
-    <div class="home-ubi-hours">
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Lunes — Viernes</span><span class="home-ubi-hour-time">09:00 — 19:00</span></div>
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Sábado</span><span class="home-ubi-hour-time">10:00 — 15:00</span></div>
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Domingo</span><span class="home-ubi-hour-time">Cerrado</span></div>
-    </div>
-    <div class="home-ubi-btns">
-      <a href="https://maps.google.com/?q=Don+Carlos+2945,+Las+Condes,+Santiago" target="_blank" class="home-ubi-btn-maps">Ver en Google Maps →</a>
-      <a href="agendar.html" class="home-ubi-btn-ag">Agendar hora</a>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTO DESTACADO -->
-<section id="home-producto">
-  <div class="home-prod-inner reveal">
-    <div class="home-prod-visual">
-      <div class="home-prod-visual-inner">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(28,58,48,0.25)" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <div class="home-prod-visual-label">Próximamente</div>
-      </div>
-    </div>
-    <div>
-      <div class="home-prod-eyebrow">Tienda</div>
-      <h2 class="home-prod-title">Skincare médico para llevar a casa</h2>
-      <p class="home-prod-desc">Estamos curating los mejores productos de medicina estética para que puedas mantener tus resultados entre sesiones. Pronto disponible.</p>
-      <a href="tienda.html" class="btn-primary">Avisar cuando esté disponible</a>
-    </div>
-  </div>
-</section>
-
-<!-- OFERTAS EXCLUSIVAS -->
-<section id="home-ofertas">
-  <div class="home-of-inner reveal">
-    <div class="home-of-lock">🔒</div>
-    <div class="home-of-eyebrow">Ofertas Especiales</div>
-    <h2 class="home-of-title">Accede a descuentos<br><em>que no publicamos</em></h2>
-    <p class="home-of-desc">Nuestras mejores ofertas son exclusivas para suscriptores. Regístrate con tu correo y accede a promociones que no encontrarás en otro lado — sesiones, packs y precios especiales cada mes.</p>
-    <div class="home-of-preview">
-      <div class="home-of-preview-item"><div class="home-of-preview-name">Pack Botox 3 zonas</div><div class="home-of-preview-price">$xxx.xxx</div></div>
-      <div class="home-of-preview-item"><div class="home-of-preview-name">Soprano Ice 6 sesiones</div><div class="home-of-preview-price">$xxx.xxx</div></div>
-      <div class="home-of-preview-item"><div class="home-of-preview-name">EmFusion intro</div><div class="home-of-preview-price">$xx.xxx</div></div>
-    </div>
-    <form class="home-of-form" onsubmit="submitOfertasEmail(event)">
-      <input type="email" class="home-of-input" id="ofertas-email" placeholder="tu@correo.cl" required>
-      <button type="submit" class="home-of-submit">Ver Ofertas →</button>
-    </form>
-    <p class="home-of-legal">Sin spam. Una vez a la semana como máximo.</p>
-  </div>
-</section>
-
-<!-- MEMBRESÍA + PUNTOS -->
-<section id="home-programas">
-  <a href="membresia.html" class="home-prog-block left reveal">
-    <div>
-      <div class="home-prog-eyebrow">Suscripciones Sénse</div>
-      <h2 class="home-prog-title">Membresía VIP,<br><em>beneficios reales</em></h2>
-      <p class="home-prog-desc">Desde $29.990/mes. Descuentos en todos los servicios, agendamiento prioritario, acceso a eventos exclusivos y mucho más.</p>
-    </div>
-    <span class="home-prog-cta">Ver planes →</span>
-  </a>
-  <a href="lealtad.html" class="home-prog-block right reveal">
-    <div>
-      <div class="home-prog-eyebrow">Sénse Puntos</div>
-      <h2 class="home-prog-title">Cada visita<br><em>te recompensa</em></h2>
-      <p class="home-prog-desc">Acumula puntos con cada servicio, referido y reseña. Canjéalos por tratamientos. Sube de nivel: Plata, Oro y Diamante.</p>
-    </div>
-    <span class="home-prog-cta">Conocer programa →</span>
-  </a>
-</section>
-
-<!-- TESTIMONIOS -->
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div class="testimonios-header reveal">
-    <span class="section-tag">Testimonios</span>
-    <h2 class="section-title">Lo que dicen<br><em>nuestros pacientes</em></h2>
-  </div>
-  <div class="testimonios-grid">
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Vine con desconfianza porque otros lugares me cobraban el doble. La diferencia de Sénse es que notas que el equipo realmente sabe lo que hace — y el ambiente es increíble."</blockquote>
-      <div class="testimonio-author">Valentina M. — Providencia</div>
-    </div>
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Llevo 3 sesiones de depilación y los resultados son brutales. Además la atención es como ningún otro lugar — te explican todo antes de hacer cualquier cosa."</blockquote>
-      <div class="testimonio-author">Camila R. — Las Condes</div>
-    </div>
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"El botox quedó perfectamente natural. Tenía miedo de quedar congelada pero la doctora fue súper cuidadosa. Ya agendé para el remodelamiento corporal."</blockquote>
-      <div class="testimonio-author">Andrea V. — Ñuñoa</div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section id="home-instagram">
-  <div class="home-ig-header reveal">
-    <div class="home-ig-handle">@sensemedspa</div>
-    <h2 class="home-ig-title">Síguenos en Instagram</h2>
-  </div>
-  <div class="home-ig-grid reveal">
-    <div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#3D6B58,#1C3A30)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#527A6A,#3D6B58)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#B5C9BC,#527A6A)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#3D6B58,#1C3A30)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#527A6A,#3D6B58)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#B5C9BC,#527A6A)"></div></div>
-  </div>
-  <div class="reveal">
-    <a href="https://instagram.com/sensemedspa" target="_blank" class="btn-primary">Seguir @sensemedspa</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<!-- CONTÁCTANOS -->
-<section id="contactanos" style="background:var(--obsidian); padding: 100px 5vw;">
-  <div style="max-width:900px; margin:0 auto; text-align:center;" class="reveal">
-    <span class="section-tag" style="color:var(--gold);">Contáctanos</span>
-    <h2 class="section-title" style="color:var(--white); margin: 20px 0 16px;">Estamos aquí<br><em>para ayudarte</em></h2>
-    <p class="section-sub" style="color:rgba(250,247,242,0.6); margin-bottom:56px;">Resuelve tus dudas por el canal que prefieras. Te respondemos en menos de 2 horas hábiles.</p>
-    <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
-      <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" style="display:flex; align-items:center; gap:17px; background:#25D366; color:#fff; text-decoration:none; padding:24px 43px; border-radius:5px; font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; letter-spacing:1px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        WhatsApp
-      </a>
-      <a href="/cdn-cgi/l/email-protection#e89f8b87858a8d9aa880879c85898184c68b8785" style="display:flex; align-items:center; gap:17px; background:transparent; color:var(--white); text-decoration:none; padding:24px 43px; border-radius:5px; border:1px solid rgba(250,247,242,0.2); font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; letter-spacing:1px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(250,247,242,0.2)'">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="8ff8ece0e2edeafdcfe7e0fbe2eee6e3a1ece0e2">[email&#160;protected]</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
 
 <footer>
   <div class="footer-top">
@@ -1962,8 +1716,13 @@
 <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+
 
   // CURSOR
   const cursor = document.getElementById('cursor');
@@ -2119,6 +1878,17 @@ function submitOfertasEmail(e) {
   const email = document.getElementById('ofertas-email').value;
   const form = e.target;
   form.innerHTML = '<p style="color:rgba(181,201,188,0.8);font-size:15px;padding:16px;">¡Listo! Recibirás las ofertas exclusivas en tu correo.</p>';
+}
+
+
+
+function submitOfertasGate(e) {
+  e.preventDefault();
+  document.getElementById('ofertas-form-section').style.display = 'none';
+  document.getElementById('ofertas-success').style.display = 'block';
+  document.getElementById('ofertas-blur').style.filter = 'none';
+  document.getElementById('ofertas-blur').style.opacity = '1';
+  document.getElementById('ofertas-blur').style.pointerEvents = 'all';
 }
 
 </script>

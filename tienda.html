@@ -741,21 +741,63 @@
     position: fixed;
     inset: 0;
     background: var(--obsidian);
-    z-index: 99;
+    z-index: 990;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 88px 40px 48px;
+    overflow-y: auto;
+    gap: 0;
   }
   .mobile-menu.open { display: flex; }
+  .mobile-menu-section-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 24px 0 4px;
+    display: block;
+  }
   .mobile-menu a {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 43px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
     color: var(--cream);
     text-decoration: none;
-    letter-spacing: 2px;
-    transition: color 0.2s;
+    padding: 13px 0;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s, padding-left 0.2s;
   }
+  .mobile-menu a:hover { color: var(--gold); padding-left: 6px; }
+  .mobile-menu a.sub { font-size: 12px; letter-spacing: 1px; color: rgba(245,240,232,0.65); padding: 9px 0 9px 16px; }
+  .mobile-menu a.sub:hover { color: var(--gold); padding-left: 22px; }
+  .mobile-menu a.highlight { color: var(--gold); }
+  .mobile-menu .mobile-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin: 12px 0; }
+  /* mobile perfil button */
+  .btn-mobile-perfil {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    color: rgba(181,201,188,0.85);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background: rgba(181,201,188,0.10);
+    border: 1px solid rgba(181,201,188,0.30);
+    border-radius: 6px;
+    padding: 7px 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-mobile-perfil:hover { background: rgba(181,201,188,0.18); color: var(--cream); }
   .mobile-menu a:hover { color: var(--gold); }
   .close-menu {
     position: absolute;
@@ -773,6 +815,7 @@
     nav.scrolled { height: 56px; }
     .nav-center { display: none; }
     .btn-agendar, .btn-ingresar { display: none; }
+    .btn-mobile-perfil { display: flex; }
     .hamburger { display: flex; }
     #hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 120px 32px 60px; }
@@ -1556,15 +1599,39 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" onclick="toggleMenu()">✕</button>
+
+  <!-- Tratamientos -->
   <a href="/tratamientos.html" onclick="toggleMenu()">Tratamientos</a>
+  <span class="mobile-menu-section-title">Inyectables</span>
+  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Toxina Botulínica</a>
+  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Ácido Hialurónico</a>
+  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Sculptra &amp; Exosomas</a>
+  <span class="mobile-menu-section-title">Corporal</span>
+  <a href="/corporal.html" class="sub" onclick="toggleMenu()">Lipoescultura sin cirugía</a>
+  <a href="/corporal.html" class="sub" onclick="toggleMenu()">Reafirmante corporal</a>
+  <span class="mobile-menu-section-title">Facial &amp; Láser</span>
+  <a href="/facial.html" class="sub" onclick="toggleMenu()">Tratamientos faciales</a>
+  <a href="/laser.html" class="sub" onclick="toggleMenu()">Depilación Láser Soprano Ice</a>
+
+  <div class="mobile-divider"></div>
+
   <a href="/ubicaciones.html" onclick="toggleMenu()">Ubicaciones</a>
   <a href="/tienda.html" onclick="toggleMenu()">Tienda</a>
   <a href="/ofertas.html" onclick="toggleMenu()">Ofertas Especiales</a>
+
+  <div class="mobile-divider"></div>
+
   <a href="/quienes-somos.html" onclick="toggleMenu()">Quiénes Somos</a>
+  <a href="/expertos.html" onclick="toggleMenu()">Nuestros Expertos</a>
+  <a href="/blog.html" onclick="toggleMenu()">Blog</a>
+  <a href="/gift-cards.html" onclick="toggleMenu()">Gift Cards</a>
   <a href="/membresia.html" onclick="toggleMenu()">Suscripciones Sénse</a>
   <a href="/lealtad.html" onclick="toggleMenu()">Sénse Puntos</a>
   <a href="/referidos.html" onclick="toggleMenu()">Programa de Referidos</a>
-  <a href="/agendar.html" onclick="toggleMenu()" style="color:var(--gold);">Agendar Ahora</a>
+
+  <div class="mobile-divider"></div>
+
+  <a href="/agendar.html" class="highlight" onclick="toggleMenu()">Agendar Ahora →</a>
 </div>
 
 <!-- NAV -->
@@ -1642,6 +1709,10 @@
   <div class="nav-actions">
     <a href="/agendar.html" class="btn-agendar">Agendar Ahora</a>
     <a href="/perfil.html" class="btn-ingresar">Ingresar</a>
+    <a href="/perfil.html" class="btn-mobile-perfil" id="btn-mobile-perfil">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span id="btn-mobile-perfil-text">Ingresar</span>
+    </a>
     <button class="nav-cart-btn" aria-label="Carrito">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
@@ -1946,7 +2017,7 @@ function renderCart(){var body=document.getElementById('cart-body');if(!body)ret
 document.addEventListener('DOMContentLoaded',function(){updateCartBadge();var cb=document.querySelector('.nav-cart-btn');if(cb)cb.onclick=cartOpen;});
 
 
-(function(){var u=localStorage.getItem('sense_user_name');if(u){var btn=document.querySelector('.btn-ingresar');if(btn){btn.textContent=u.split(' ')[0];btn.style.background='rgba(181,201,188,0.12)';btn.style.borderColor='rgba(181,201,188,0.5)';}}}());
+(function(){var u=localStorage.getItem('sense_user_name');if(u){var n=u.split(' ')[0];var btn=document.querySelector('.btn-ingresar');if(btn){btn.textContent=n;btn.style.background='rgba(181,201,188,0.12)';btn.style.borderColor='rgba(181,201,188,0.5)';}var mb=document.getElementById('btn-mobile-perfil-text');if(mb)mb.textContent=n;}}());
 
 </script>
 </body>

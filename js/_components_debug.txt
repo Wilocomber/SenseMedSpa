@@ -1,0 +1,26 @@
+=== NAV ===
+<!-- NAV -->
+<nav id="navbar">
+
+  <!-- Logo -->
+  <a href="#" class="nav-logo">
+    <img src="/img/logo.png" style="height:53px;width:53px;object-fit:contain;" alt="logo">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:#F5F0E8;">Sénse MedSpa</span>
+  </a>
+
+  <!-- Center nav links -->
+  <ul class="nav-center">
+
+    <!-- Tratamientos (con dropdown) -->
+    <li class="has-dropdown" id="nav-tratamientos">
+     
+
+=== FOOTER ===
+<!-- FOOTER -->
+<!-- CONTÁCTANOS -->
+<section id="contactanos" style="background:var(--obsidian); padding: 100px 5vw;">
+  <div style="max-width:900px; margin:0 auto; text-align:center;" class="reveal">
+    <span class="section-tag" style="color:var(--gold);">Contáctanos</span>
+    <h2 class="section-title" style="color:var(--white); margin: 20px 0 16px;">Estamos aquí<br><em>para ayudarte</em></h2>
+    <p class="section-sub" style="color:rgba(250,247,242,0.6); margin-bottom:56px;">Resuelve tus du
+

@@ -1768,7 +1768,7 @@
   // Mostrar a los 2 segundos
   setTimeout(mostrarPopup, 2000);
   // Cerrar al hacer click en el overlay (fuera de la card)
-  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+  document.getElementById('popup-overlay')?.addEventListener('click', function(e) {
     if (e.target === this) cerrarPopup();
   });
 

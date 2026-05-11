@@ -1509,6 +1509,25 @@
 </head>
 <body>
 
+<!-- POPUP BIENVENIDA -->
+<div id="popup-overlay" class="popup-overlay">
+  <div class="popup-card">
+    <button class="popup-close" onclick="cerrarPopup()">✕</button>
+    <div class="popup-tag">Oferta exclusiva de bienvenida</div>
+    <h2 class="popup-title">15% off<br><em>en tu primera sesión</em></h2>
+    <p class="popup-desc">Déjanos tu correo y recibe tu código de descuento al instante.</p>
+    <form class="popup-form" id="popup-form" onsubmit="submitPopup(event)">
+      <input type="email" class="popup-input" id="popup-email" placeholder="tu@correo.cl" required>
+      <button type="submit" class="popup-btn">Quiero mi descuento →</button>
+    </form>
+    <div class="popup-success" id="popup-success">
+      <div class="popup-check">✓</div>
+      <p>¡Listo! Tu código es <strong>BIENVENIDA15</strong></p>
+      <p class="popup-note">Te lo enviamos a tu correo en breve.</p>
+    </div>
+    <p class="popup-legal">Sin spam. Puedes darte de baja cuando quieras.</p>
+  </div>
+</div>
 <!-- CURSOR -->
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
@@ -1792,7 +1811,7 @@
   // Mostrar a los 2 segundos
   setTimeout(mostrarPopup, 2000);
   // Cerrar al hacer click en el overlay (fuera de la card)
-  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+  document.getElementById('popup-overlay')?.addEventListener('click', function(e) {
     if (e.target === this) cerrarPopup();
   });
 

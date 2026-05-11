@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medicina Estética en Las Condes — Sénse MedSpa</title>
+  <title>Programa de Referidos — Sénse MedSpa</title>
   <link rel="icon" type="image/png" href="/img/logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+
 
   :root {
     --sand: #F5F0E8;
@@ -1469,6 +1470,81 @@
     .home-exp-dark, .home-exp-light, .home-ubi-info, .home-ubi-photo, .home-prog-block { padding: 56px 32px; }
   }
 
+  
+
+.page-hero-dark { padding: 160px 48px 100px; background: var(--obsidian); text-align: center; position: relative; overflow: hidden; }
+.page-hero-dark::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(140,136,128,0.18) 0%, transparent 60%); }
+.page-hero-dark .eyebrow { font-family: "DM Sans", sans-serif; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; position: relative; }
+.page-hero-dark h1 { font-family: "Cormorant Garamond", serif; font-size: clamp(42px, 6vw, 80px); font-weight: 300; color: var(--cream); line-height: 1.1; margin: 0 0 24px; position: relative; }
+.page-hero-dark h1 em { font-style: italic; color: var(--gold); }
+.page-hero-dark .sub { font-size: 19px; color: rgba(245,240,232,0.65); max-width: 580px; margin: 0 auto; position: relative; line-height: 1.8; }
+
+.ref-how { max-width: 1100px; margin: 0 auto; padding: 100px 48px 80px; text-align: center; }
+.ref-how-title { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 300; color: var(--obsidian); margin-bottom: 12px; }
+.ref-how-sub { font-size: 17px; color: var(--stone); margin-bottom: 64px; }
+.ref-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+.ref-steps::before { content: ""; position: absolute; top: 32px; left: calc(16.66% + 16px); right: calc(16.66% + 16px); height: 1px; background: linear-gradient(90deg, var(--warm-black), var(--stone), var(--warm-black)); opacity: 0.2; }
+.ref-step { padding: 0 32px; }
+.ref-step-num { width: 64px; height: 64px; border-radius: 50%; background: var(--obsidian); color: var(--gold); font-family: "Cormorant Garamond", serif; font-size: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; position: relative; z-index: 1; }
+.ref-step h3 { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 400; color: var(--obsidian); margin: 0 0 12px; }
+.ref-step p { font-size: 15px; color: var(--stone); line-height: 1.8; }
+
+.ref-rewards { background: var(--cream); padding: 80px 48px; }
+.ref-rewards-inner { max-width: 1100px; margin: 0 auto; }
+.ref-rewards-title { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 300; color: var(--obsidian); text-align: center; margin-bottom: 8px; }
+.ref-rewards-sub { text-align: center; font-size: 16px; color: var(--stone); margin-bottom: 56px; }
+.ref-reward-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.ref-reward-card { background: #fff; border-radius: 24px; padding: 40px 36px; display: flex; gap: 28px; align-items: flex-start; box-shadow: 0 4px 24px rgba(28,58,48,0.06); transition: box-shadow 0.3s, transform 0.3s; }
+.ref-reward-card:hover { box-shadow: 0 16px 48px rgba(28,58,48,0.1); transform: translateY(-3px); }
+.ref-reward-icon { font-size: 44px; flex-shrink: 0; line-height: 1; }
+.ref-reward-text h3 { font-family: "Cormorant Garamond", serif; font-size: 26px; font-weight: 400; color: var(--obsidian); margin: 0 0 8px; }
+.ref-reward-text p { font-size: 15px; color: var(--stone); line-height: 1.7; margin: 0; }
+.ref-reward-pill { display: inline-block; background: var(--obsidian); color: var(--gold); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; font-family: "DM Sans", sans-serif; }
+
+.ref-share { max-width: 760px; margin: 0 auto; padding: 100px 48px 80px; text-align: center; }
+.ref-share h2 { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 300; color: var(--obsidian); margin-bottom: 16px; }
+.ref-share p { font-size: 17px; color: var(--stone); margin-bottom: 40px; line-height: 1.7; }
+.ref-form { background: var(--obsidian); border-radius: 28px; padding: 56px; text-align: left; }
+.ref-form-title { font-family: "Cormorant Garamond", serif; font-size: 30px; color: var(--cream); margin-bottom: 8px; }
+.ref-form-sub { font-size: 15px; color: rgba(245,240,232,0.55); margin-bottom: 36px; }
+.ref-field { margin-bottom: 20px; }
+.ref-field label { display: block; font-size: 13px; color: rgba(245,240,232,0.6); margin-bottom: 8px; font-family: "DM Sans", sans-serif; }
+.ref-field input { width: 100%; box-sizing: border-box; padding: 14px 20px; border-radius: 14px; border: 1px solid rgba(245,240,232,0.15); background: rgba(255,255,255,0.06); color: var(--cream); font-family: "DM Sans", sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s; }
+.ref-field input:focus { border-color: var(--gold); }
+.ref-field input::placeholder { color: rgba(245,240,232,0.3); }
+.ref-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ref-submit { width: 100%; padding: 16px; background: var(--gold); color: #fff; border: none; border-radius: 100px; font-family: "DM Sans", sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+.ref-submit:hover { background: #7a7870; }
+.ref-legal { font-size: 12px; color: rgba(245,240,232,0.35); text-align: center; margin-top: 20px; line-height: 1.7; }
+#ref-success { display: none; text-align: center; padding: 20px 0; }
+#ref-success .ref-check { font-size: 56px; margin-bottom: 16px; }
+#ref-success h3 { font-family: "Cormorant Garamond", serif; font-size: 34px; color: var(--cream); margin-bottom: 12px; }
+#ref-success p { font-size: 16px; color: rgba(245,240,232,0.65); }
+
+.ref-faq { max-width: 760px; margin: 0 auto; padding: 0 48px 100px; }
+.ref-faq-title { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 300; color: var(--obsidian); margin-bottom: 40px; text-align: center; }
+.ref-faq-item { border-bottom: 1px solid rgba(28,58,48,0.1); }
+.ref-faq-q { width: 100%; text-align: left; padding: 20px 0; background: none; border: none; font-family: "Cormorant Garamond", serif; font-size: 20px; color: var(--obsidian); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.ref-faq-q:hover { color: var(--warm-black); }
+.ref-faq-q svg { flex-shrink: 0; transition: transform 0.25s; }
+.ref-faq-item.open .ref-faq-q svg { transform: rotate(180deg); }
+.ref-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.ref-faq-item.open .ref-faq-a { max-height: 200px; }
+.ref-faq-a p { font-size: 15px; color: var(--stone); line-height: 1.8; padding-bottom: 20px; margin: 0; }
+
+@media (max-width: 900px) {
+  .page-hero-dark { padding: 120px 24px 80px; }
+  .ref-how { padding: 80px 24px 60px; }
+  .ref-steps { grid-template-columns: 1fr; gap: 40px; }
+  .ref-steps::before { display: none; }
+  .ref-rewards { padding: 60px 24px; }
+  .ref-reward-grid { grid-template-columns: 1fr; }
+  .ref-share { padding: 80px 24px 60px; }
+  .ref-form { padding: 36px 24px; }
+  .ref-form-row { grid-template-columns: 1fr; }
+  .ref-faq { padding: 0 24px 80px; }
+}
+
   </style>
 </head>
 <body>
@@ -1491,6 +1567,7 @@
     <p class="popup-legal">Sin spam. Puedes darte de baja cuando quieras.</p>
   </div>
 </div>
+<!-- CURSOR -->
 <!-- CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
@@ -1595,259 +1672,146 @@
 
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <span class="hero-eyebrow">MedSpa · Santiago, Chile</span>
-    <h1 class="hero-title">Tu mejor<br>versión,<br><em>con ciencia.</em></h1>
-    <p class="hero-sub">Medicina estética de primera calidad a precios accesibles. Depilación láser, inyectables y remodelamiento corporal en un solo lugar.</p>
-    <div class="hero-actions">
-      <a href="/agendar.html" class="btn-primary">Agenda tu consulta gratis</a>
-      <a href="/tratamientos.html" class="btn-ghost">Ver tratamientos</a>
-    </div>
-    
-  </div>
-  <div class="hero-right" id="heroCarousel">
-    <div class="hero-overlay"></div>
-    <img id="slide-0" class="active" src="/img/hero1.png" alt="Inyectables Sénse MedSpa">
-    <img id="slide-1" src="/img/hero2.png" alt="Remodelamiento corporal Sénse MedSpa">
-    <img id="slide-2" src="/img/hero3.png" alt="Depilación láser Sénse MedSpa">
-    <div style="position:absolute;bottom:24px;right:24px;display:flex;gap:8px;z-index:10;">
-      <span class="hero-dot active" onclick="goToSlide(0)" style="width:8px;height:8px;border-radius:50%;background:rgba(184,150,90,0.9);cursor:pointer;transition:background 0.3s;display:block;"></span>
-      <span class="hero-dot" onclick="goToSlide(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(250,247,242,0.3);cursor:pointer;transition:background 0.3s;display:block;"></span>
-      <span class="hero-dot" onclick="goToSlide(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(250,247,242,0.3);cursor:pointer;transition:background 0.3s;display:block;"></span>
-    </div>
-  </div>
+
+<section class="page-hero-dark">
+  <span class="eyebrow">Comparte y gana</span>
+  <h1>Programa de<br><em>Referidos</em></h1>
+  <p class="sub">Recomienda Sénse a tus amigos y amigas, y ambos reciben un beneficio exclusivo. Así de simple.</p>
 </section>
 
-
-
-
-<!-- TRATAMIENTOS HOME -->
-<section id="home-tratamientos">
-  <div class="home-trat-header reveal">
-    <span class="section-tag">Tratamientos</span>
-    <h2 class="section-title">Resultados que se notan,<br><em>de forma natural</em></h2>
-    <p class="section-sub" style="margin-top:16px;">Tecnología de primer nivel, médicos certificados, resultados comprobados.</p>
+<div class="ref-how reveal">
+  <h2 class="ref-how-title">Como funciona</h2>
+  <p class="ref-how-sub">Tres pasos para que tu y quien refieras disfruten de Sense.</p>
+  <div class="ref-steps">
+    <div class="ref-step">
+      <div class="ref-step-num">1</div>
+      <h3>Refiere a alguien</h3>
+      <p>Llena el formulario con los datos de tu contacto. Le enviaremos una invitacion especial de tu parte.</p>
+    </div>
+    <div class="ref-step">
+      <div class="ref-step-num">2</div>
+      <h3>Ellos agendan</h3>
+      <p>Tu referido agenda y completa su primera sesion en Sense MedSpa con un 15% de descuento de bienvenida.</p>
+    </div>
+    <div class="ref-step">
+      <div class="ref-step-num">3</div>
+      <h3>Tu ganas</h3>
+      <p>Recibes automaticamente tu recompensa: 500 puntos Sense canjeables en tu proximo tratamiento.</p>
+    </div>
   </div>
-  <div class="home-trat-row">
-    <a href="inyectables.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#3D6B58,#1C3A30);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Inyectables</span>
+</div>
+
+<div class="ref-rewards">
+  <div class="ref-rewards-inner reveal">
+    <h2 class="ref-rewards-title">Lo que ganan ambos</h2>
+    <p class="ref-rewards-sub">Un beneficio para ti, y un regalo de bienvenida para quien refieras.</p>
+    <div class="ref-reward-grid">
+      <div class="ref-reward-card">
+        <div class="ref-reward-icon">&#127873;</div>
+        <div class="ref-reward-text">
+          <div class="ref-reward-pill">Para ti</div>
+          <h3>500 puntos Sense</h3>
+          <p>Por cada persona que refieras y complete su primera sesion, recibes 500 puntos Sense canjeables en cualquier tratamiento.</p>
         </div>
       </div>
-      <div class="home-trat-name">Inyectables</div>
-      <div class="home-trat-count">5 tratamientos</div>
-    </a>
-    <a href="corporal.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#527A6A,#3D6B58);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Remodelación</span>
+      <div class="ref-reward-card">
+        <div class="ref-reward-icon">&#10024;</div>
+        <div class="ref-reward-text">
+          <div class="ref-reward-pill">Para tu referido</div>
+          <h3>15% de descuento</h3>
+          <p>Quien llegue referido por ti recibe un 15% de descuento en su primera sesion, sin restricciones de tratamiento.</p>
         </div>
       </div>
-      <div class="home-trat-name">Remodelación Corporal</div>
-      <div class="home-trat-count">4 tratamientos</div>
-    </a>
-    <a href="laser.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#B5C9BC,#527A6A);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Depilación</span>
+      <div class="ref-reward-card">
+        <div class="ref-reward-icon">&#128293;</div>
+        <div class="ref-reward-text">
+          <div class="ref-reward-pill">Bonus</div>
+          <h3>Referido triple</h3>
+          <p>Si en un mes refieres a 3 o mas personas que completen su primera sesion, recibes ademas un tratamiento gratis a eleccion.</p>
         </div>
       </div>
-      <div class="home-trat-name">Depilación Láser</div>
-      <div class="home-trat-count">1 tratamiento</div>
-    </a>
-    <a href="facial.html" class="home-trat-item reveal">
-      <div class="home-trat-circle">
-        <div class="home-trat-circle-fallback" style="background:linear-gradient(145deg,#8C8880,#527A6A);"></div>
-        <div class="home-trat-label-wrap">
-          <span class="home-trat-label">Tratamientos</span>
+      <div class="ref-reward-card">
+        <div class="ref-reward-icon">&#9854;</div>
+        <div class="ref-reward-text">
+          <div class="ref-reward-pill">Sin limite</div>
+          <h3>Sin tope de referidos</h3>
+          <p>Puedes referir a tantas personas como quieras. Cada una que complete su sesion te suma puntos y beneficios.</p>
         </div>
       </div>
-      <div class="home-trat-name">Tratamientos Faciales</div>
-      <div class="home-trat-count">4 tratamientos</div>
-    </a>
+    </div>
   </div>
-  <div class="home-trat-ctas reveal">
-    <a href="agendar.html" class="btn-primary">Agendar ahora</a>
-    <a href="inyectables.html" class="btn-ghost">Ver todos los tratamientos</a>
-  </div>
-</section>
+</div>
 
-<!-- EXPERTOS HOME -->
-<section id="home-expertos">
-  <div class="home-exp-dark reveal">
-    <div>
-      <div class="home-exp-eyebrow">Nuestro equipo</div>
-      <h2 class="home-exp-title">Cada tratamiento,<br>en manos certificadas</h2>
-      <p class="home-exp-text">Médicos estetas con formación internacional y años de experiencia. Nunca un tratamiento sin evaluación previa. Nunca un resultado genérico.</p>
-      <div class="home-exp-avatars">
-        <div class="home-exp-avatar">D</div>
-        <div class="home-exp-avatar">D</div>
-        <div class="home-exp-avatar">T</div>
+<div class="ref-share reveal">
+  <h2>Refiere a alguien hoy</h2>
+  <p>Ingresa los datos de tu contacto y nosotros le enviamos la invitacion con tu nombre y el descuento de bienvenida.</p>
+  <div class="ref-form">
+    <form id="ref-form" onsubmit="submitReferido(event)">
+      <h3 class="ref-form-title">Enviar invitacion</h3>
+      <p class="ref-form-sub">Completa el formulario y nos encargamos del resto.</p>
+      <div class="ref-form-row">
+        <div class="ref-field">
+          <label>Tu nombre</label>
+          <input type="text" id="ref-mi-nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="ref-field">
+          <label>Tu email o telefono</label>
+          <input type="text" id="ref-mi-contacto" placeholder="+56 9 XXXX XXXX" required>
+        </div>
       </div>
-      <a href="expertos.html" class="btn-primary" style="align-self:flex-start;">Conoce al equipo →</a>
-    </div>
-  </div>
-  <div class="home-exp-light reveal">
-    <div>
-      <div class="home-exp-eyebrow">Quiénes somos</div>
-      <h2 class="home-exp-title">Medicina estética<br>sin letra chica</h2>
-      <p class="home-exp-text">Sénse nació para hacer accesible la medicina estética de verdad. Sin presión, sin tratamientos innecesarios, con precios que tienen sentido.</p>
-      <a href="quienes-somos.html" class="btn-ghost">Nuestra historia →</a>
-    </div>
-  </div>
-</section>
-
-<!-- UBICACIÓN HOME -->
-<section id="home-ubicacion">
-  <div class="home-ubi-photo">
-    <div class="home-ubi-photo-tag">
-      <div class="home-ubi-photo-name">Sénse MedSpa</div>
-      <div class="home-ubi-photo-addr">Don Carlos 2945, Las Condes</div>
-    </div>
-  </div>
-  <div class="home-ubi-info reveal">
-    <div class="home-ubi-eyebrow">Encuéntranos</div>
-    <h2 class="home-ubi-title">Visítanos en<br><em>Las Condes</em></h2>
-    <div class="home-ubi-hours">
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Lunes — Viernes</span><span class="home-ubi-hour-time">09:00 — 19:00</span></div>
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Sábado</span><span class="home-ubi-hour-time">10:00 — 15:00</span></div>
-      <div class="home-ubi-hour-row"><span class="home-ubi-hour-day">Domingo</span><span class="home-ubi-hour-time">Cerrado</span></div>
-    </div>
-    <div class="home-ubi-btns">
-      <a href="https://maps.google.com/?q=Don+Carlos+2945,+Las+Condes,+Santiago" target="_blank" class="home-ubi-btn-maps">Ver en Google Maps →</a>
-      <a href="agendar.html" class="home-ubi-btn-ag">Agendar hora</a>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTO DESTACADO -->
-<section id="home-producto">
-  <div class="home-prod-inner reveal">
-    <div class="home-prod-visual">
-      <div class="home-prod-visual-inner">
-        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(28,58,48,0.25)" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        <div class="home-prod-visual-label">Próximamente</div>
+      <div class="ref-form-row">
+        <div class="ref-field">
+          <label>Nombre de tu referido/a</label>
+          <input type="text" id="ref-nombre" placeholder="Nombre de quien refieres" required>
+        </div>
+        <div class="ref-field">
+          <label>Su telefono o email</label>
+          <input type="text" id="ref-contacto" placeholder="Telefono o correo" required>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="home-prod-eyebrow">Tienda</div>
-      <h2 class="home-prod-title">Skincare médico para llevar a casa</h2>
-      <p class="home-prod-desc">Estamos curating los mejores productos de medicina estética para que puedas mantener tus resultados entre sesiones. Pronto disponible.</p>
-      <a href="tienda.html" class="btn-primary">Avisar cuando esté disponible</a>
-    </div>
-  </div>
-</section>
-
-<!-- OFERTAS EXCLUSIVAS -->
-<section id="home-ofertas">
-  <div class="home-of-inner reveal">
-    <div class="home-of-lock">🔒</div>
-    <div class="home-of-eyebrow">Ofertas Especiales</div>
-    <h2 class="home-of-title">Accede a descuentos<br><em>que no publicamos</em></h2>
-    <p class="home-of-desc">Nuestras mejores ofertas son exclusivas para suscriptores. Regístrate con tu correo y accede a promociones que no encontrarás en otro lado — sesiones, packs y precios especiales cada mes.</p>
-    <div class="home-of-preview">
-      <div class="home-of-preview-item"><div class="home-of-preview-name">Pack Botox 3 zonas</div><div class="home-of-preview-price">$xxx.xxx</div></div>
-      <div class="home-of-preview-item"><div class="home-of-preview-name">Soprano Ice 6 sesiones</div><div class="home-of-preview-price">$xxx.xxx</div></div>
-      <div class="home-of-preview-item"><div class="home-of-preview-name">EmFusion intro</div><div class="home-of-preview-price">$xx.xxx</div></div>
-    </div>
-    <form class="home-of-form" onsubmit="submitOfertasEmail(event)">
-      <input type="email" class="home-of-input" id="ofertas-email" placeholder="tu@correo.cl" required>
-      <button type="submit" class="home-of-submit">Ver Ofertas →</button>
+      <button type="submit" class="ref-submit">Enviar invitacion &rarr;</button>
+      <p class="ref-legal">Al enviar este formulario autorizas a Sense MedSpa a contactar a tu referido/a con la invitacion. Sin spam.</p>
     </form>
-    <p class="home-of-legal">Sin spam. Una vez a la semana como máximo.</p>
+    <div id="ref-success">
+      <div class="ref-check">&#127881;</div>
+      <h3>Invitacion enviada!</h3>
+      <p>Le haremos llegar la invitacion a tu referido/a. Cuando completen su primera sesion, recibiras tus 500 puntos Sense.</p>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- MEMBRESÍA + PUNTOS -->
-<section id="home-programas">
-  <a href="membresia.html" class="home-prog-block left reveal">
-    <div>
-      <div class="home-prog-eyebrow">Suscripciones Sénse</div>
-      <h2 class="home-prog-title">Membresía VIP,<br><em>beneficios reales</em></h2>
-      <p class="home-prog-desc">Desde $29.990/mes. Descuentos en todos los servicios, agendamiento prioritario, acceso a eventos exclusivos y mucho más.</p>
-    </div>
-    <span class="home-prog-cta">Ver planes →</span>
-  </a>
-  <a href="lealtad.html" class="home-prog-block right reveal">
-    <div>
-      <div class="home-prog-eyebrow">Sénse Puntos</div>
-      <h2 class="home-prog-title">Cada visita<br><em>te recompensa</em></h2>
-      <p class="home-prog-desc">Acumula puntos con cada servicio, referido y reseña. Canjéalos por tratamientos. Sube de nivel: Plata, Oro y Diamante.</p>
-    </div>
-    <span class="home-prog-cta">Conocer programa →</span>
-  </a>
-</section>
+<div class="ref-faq reveal">
+  <h2 class="ref-faq-title">Preguntas frecuentes</h2>
+  <div class="ref-faq-item">
+    <button class="ref-faq-q" onclick="toggleFaq(this)">
+      Cuando recibo mis puntos?
+      <svg width="16" height="16" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="2,3 5,7 8,3"/></svg>
+    </button>
+    <div class="ref-faq-a"><p>Los puntos se acreditan automaticamente en tu cuenta dentro de las 48 horas de que tu referido/a complete y pague su primera sesion en Sense.</p></div>
+  </div>
+  <div class="ref-faq-item">
+    <button class="ref-faq-q" onclick="toggleFaq(this)">
+      Hay limite de referidos por mes?
+      <svg width="16" height="16" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="2,3 5,7 8,3"/></svg>
+    </button>
+    <div class="ref-faq-a"><p>No hay limite. Puedes referir a todas las personas que quieras y cada una que complete su primera sesion te suma 500 puntos Sense.</p></div>
+  </div>
+  <div class="ref-faq-item">
+    <button class="ref-faq-q" onclick="toggleFaq(this)">
+      El descuento aplica a todos los tratamientos?
+      <svg width="16" height="16" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="2,3 5,7 8,3"/></svg>
+    </button>
+    <div class="ref-faq-a"><p>Si, el 15% de descuento de bienvenida aplica a cualquier tratamiento de la carta, sin excepcion ni minimo de compra.</p></div>
+  </div>
+  <div class="ref-faq-item">
+    <button class="ref-faq-q" onclick="toggleFaq(this)">
+      Que pasa si ya tengo cuenta Sense Puntos?
+      <svg width="16" height="16" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="2,3 5,7 8,3"/></svg>
+    </button>
+    <div class="ref-faq-a"><p>Los puntos del programa de referidos se suman directamente a tu saldo de Sense Puntos existente. Todo en una sola cuenta.</p></div>
+  </div>
+</div>
 
-<!-- TESTIMONIOS -->
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div class="testimonios-header reveal">
-    <span class="section-tag">Testimonios</span>
-    <h2 class="section-title">Lo que dicen<br><em>nuestros pacientes</em></h2>
-  </div>
-  <div class="testimonios-grid">
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Vine con desconfianza porque otros lugares me cobraban el doble. La diferencia de Sénse es que notas que el equipo realmente sabe lo que hace — y el ambiente es increíble."</blockquote>
-      <div class="testimonio-author">Valentina M. — Providencia</div>
-    </div>
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Llevo 3 sesiones de depilación y los resultados son brutales. Además la atención es como ningún otro lugar — te explican todo antes de hacer cualquier cosa."</blockquote>
-      <div class="testimonio-author">Camila R. — Las Condes</div>
-    </div>
-    <div class="testimonio-card reveal">
-      <div class="stars">★★★★★</div>
-      <blockquote>"El botox quedó perfectamente natural. Tenía miedo de quedar congelada pero la doctora fue súper cuidadosa. Ya agendé para el remodelamiento corporal."</blockquote>
-      <div class="testimonio-author">Andrea V. — Ñuñoa</div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section id="home-instagram">
-  <div class="home-ig-header reveal">
-    <div class="home-ig-handle">@sensemedspa</div>
-    <h2 class="home-ig-title">Síguenos en Instagram</h2>
-  </div>
-  <div class="home-ig-grid reveal">
-    <div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#3D6B58,#1C3A30)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#527A6A,#3D6B58)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#B5C9BC,#527A6A)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#3D6B58,#1C3A30)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#527A6A,#3D6B58)"></div></div><div class="home-ig-post"><div class="home-ig-post-inner home-ig-colors" style="background:linear-gradient(145deg,#B5C9BC,#527A6A)"></div></div>
-  </div>
-  <div class="reveal">
-    <a href="https://instagram.com/sensemedspa" target="_blank" class="btn-primary">Seguir @sensemedspa</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<!-- CONTÁCTANOS -->
-<section id="contactanos" style="background:var(--obsidian); padding: 100px 5vw;">
-  <div style="max-width:900px; margin:0 auto; text-align:center;" class="reveal">
-    <span class="section-tag" style="color:var(--gold);">Contáctanos</span>
-    <h2 class="section-title" style="color:var(--white); margin: 20px 0 16px;">Estamos aquí<br><em>para ayudarte</em></h2>
-    <p class="section-sub" style="color:rgba(250,247,242,0.6); margin-bottom:56px;">Resuelve tus dudas por el canal que prefieras. Te respondemos en menos de 2 horas hábiles.</p>
-    <div style="display:flex; gap:24px; justify-content:center; flex-wrap:wrap;">
-      <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" style="display:flex; align-items:center; gap:17px; background:#25D366; color:#fff; text-decoration:none; padding:24px 43px; border-radius:5px; font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; letter-spacing:1px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        WhatsApp
-      </a>
-      <a href="/cdn-cgi/l/email-protection#e89f8b87858a8d9aa880879c85898184c68b8785" style="display:flex; align-items:center; gap:17px; background:transparent; color:var(--white); text-decoration:none; padding:24px 43px; border-radius:5px; border:1px solid rgba(250,247,242,0.2); font-family:'DM Sans',sans-serif; font-size:18px; font-weight:400; letter-spacing:1px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='rgba(250,247,242,0.2)'">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="8ff8ece0e2edeafdcfe7e0fbe2eee6e3a1ece0e2">[email&#160;protected]</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
 
 <footer>
   <div class="footer-top">
@@ -1892,8 +1856,13 @@
 <a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56988946512?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20tratamientos%20en%20S%C3%A9nse%20MedSpa" target="_blank" id="wa-float" style="position:fixed; bottom:32px; right:32px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); z-index:9999; transition: transform 0.2s, box-shadow 0.2s;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.55)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.4)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.528 5.845L.057 23.571a.75.75 0 0 0 .93.894l5.898-1.548A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.418l-.371-.222-3.844 1.008 1.026-3.735-.242-.385A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+
 
   // CURSOR
   const cursor = document.getElementById('cursor');
@@ -2049,6 +2018,28 @@ function submitOfertasEmail(e) {
   const email = document.getElementById('ofertas-email').value;
   const form = e.target;
   form.innerHTML = '<p style="color:rgba(181,201,188,0.8);font-size:15px;padding:16px;">¡Listo! Recibirás las ofertas exclusivas en tu correo.</p>';
+}
+
+
+
+function submitReferido(e) {
+  e.preventDefault();
+  var miNombre = document.getElementById("ref-mi-nombre").value;
+  var refNombre = document.getElementById("ref-nombre").value;
+  var refContacto = document.getElementById("ref-contacto").value;
+  document.getElementById("ref-form").style.display = "none";
+  document.getElementById("ref-success").style.display = "block";
+  var msg = encodeURIComponent("Hola! Soy " + miNombre + " y quiero referir a " + refNombre + " (" + refContacto + ") a Sense MedSpa.");
+  setTimeout(function() {
+    window.open("https://wa.me/56988946512?text=" + msg, "_blank");
+  }, 1500);
+}
+
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains("open");
+  document.querySelectorAll(".ref-faq-item").forEach(function(i) { i.classList.remove("open"); });
+  if (!isOpen) item.classList.add("open");
 }
 
 </script>

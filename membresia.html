@@ -811,15 +811,16 @@
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 1024px) {
-    nav { padding: 0 18px; height: 62px; }
+    nav { padding: 0 16px; height: 62px; }
     nav.scrolled { height: 54px; }
     .nav-center { display: none; }
     .btn-agendar, .btn-ingresar { display: none; }
     /* mobile: solo ícono perfil, sin texto */
     .btn-mobile-perfil { display: flex; padding: 7px 9px; border-radius: 50%; }
     .btn-mobile-perfil #btn-mobile-perfil-text { display: none; }
-    /* ocultar texto del logo, dejar solo ícono */
-    .nav-logo span { display: none; }
+    /* logo texto más pequeño en mobile */
+    .nav-logo img { height: 38px !important; width: 38px !important; }
+    .nav-logo span { font-size: 13px !important; letter-spacing: 2px !important; }
     .hamburger { display: flex; }
     #hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 120px 32px 60px; }
@@ -1612,21 +1613,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu" onclick="toggleMenu()">✕</button>
 
-  <!-- Tratamientos -->
   <a href="/tratamientos.html" onclick="toggleMenu()">Tratamientos</a>
-  <span class="mobile-menu-section-title">Inyectables</span>
-  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Toxina Botulínica</a>
-  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Ácido Hialurónico</a>
-  <a href="/inyectables.html" class="sub" onclick="toggleMenu()">Sculptra &amp; Exosomas</a>
-  <span class="mobile-menu-section-title">Corporal</span>
-  <a href="/corporal.html" class="sub" onclick="toggleMenu()">Lipoescultura sin cirugía</a>
-  <a href="/corporal.html" class="sub" onclick="toggleMenu()">Reafirmante corporal</a>
-  <span class="mobile-menu-section-title">Facial &amp; Láser</span>
-  <a href="/facial.html" class="sub" onclick="toggleMenu()">Tratamientos faciales</a>
-  <a href="/laser.html" class="sub" onclick="toggleMenu()">Depilación Láser Soprano Ice</a>
-
-  <div class="mobile-divider"></div>
-
   <a href="/ubicaciones.html" onclick="toggleMenu()">Ubicaciones</a>
   <a href="/tienda.html" onclick="toggleMenu()">Tienda</a>
   <a href="/ofertas.html" onclick="toggleMenu()">Ofertas Especiales</a>

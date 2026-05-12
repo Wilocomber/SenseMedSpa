@@ -1050,11 +1050,67 @@
   /* Section CTA */
   .trat-section-cta { text-align: center; }
   /* Responsive */
+  /* ─── TRAT CATEGORÍAS ─── */
+  .trat-cat-section {
+    padding: 80px 60px;
+    background: var(--cream);
+  }
+  .trat-cat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .trat-cat-card {
+    background: #fff;
+    padding: 56px 48px;
+    text-decoration: none;
+    display: block;
+    transition: box-shadow 0.25s;
+    border-left: 3px solid var(--gold);
+  }
+  .trat-cat-card:hover { box-shadow: 0 20px 56px rgba(28,58,48,0.1); }
+  .trat-cat-num {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .trat-cat-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--obsidian);
+    margin-bottom: 12px;
+  }
+  .trat-cat-desc {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .trat-cat-cta {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--obsidian);
+    border-bottom: 1px solid var(--obsidian);
+    padding-bottom: 2px;
+  }
+
   @media (max-width: 768px) {
     .trat-section { padding: 72px 24px; }
     .trat-grid, .trat-grid.cols-2 { grid-template-columns: 1fr; }
     .trat-laser-hero { grid-template-columns: 1fr; }
     .trat-laser-img { min-height: 200px; }
+    /* categorías responsive */
+    .trat-cat-hero { padding: 100px 24px 56px !important; }
+    .trat-cat-section { padding: 48px 20px; }
+    .trat-cat-grid { grid-template-columns: 1fr; gap: 3px; }
+    .trat-cat-card { padding: 32px 24px; }
+    .trat-cat-title { font-size: 26px; }
   }
 
 
@@ -1682,36 +1738,36 @@
 
 </nav>
 
-<section style="padding:120px 60px 80px;background:var(--obsidian);text-align:center;">
+<section class="trat-cat-hero" style="padding:120px 60px 80px;background:var(--obsidian);text-align:center;">
   <span class="section-tag" style="color:var(--gold);">Tratamientos</span>
   <h1 class="section-title" style="color:var(--cream);margin-top:16px;">Todo lo que necesitas,<br><em>en un lugar</em></h1>
   <p class="section-sub" style="color:rgba(181,201,188,0.65);max-width:540px;margin:20px auto 0;">Tecnología de primer nivel, médicos certificados y sin tiempo de recuperación. Elige tu tratamiento y agenda hoy.</p>
 </section>
-<section style="padding:80px 60px;background:var(--cream);">
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:4px;max-width:1000px;margin:0 auto;">
-    <a href="inyectables.html" style="background:#fff;padding:56px 48px;text-decoration:none;display:block;transition:box-shadow 0.25s;border-left:3px solid var(--gold);" onmouseover="this.style.boxShadow='0 20px 56px rgba(28,58,48,0.1)'" onmouseout="this.style.boxShadow=''">
-      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">01</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--obsidian);margin-bottom:12px;">Inyectables</h2>
-      <p style="font-size:14px;color:#777;line-height:1.65;margin-bottom:20px;">Toxina Botulínica · Ácido Hialurónico · Sculptra · Exosomas · Vitaminas</p>
-      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--obsidian);border-bottom:1px solid var(--obsidian);padding-bottom:2px;">Ver tratamientos →</span>
+<section class="trat-cat-section">
+  <div class="trat-cat-grid">
+    <a href="inyectables.html" class="trat-cat-card">
+      <div class="trat-cat-num">01</div>
+      <h2 class="trat-cat-title">Inyectables</h2>
+      <p class="trat-cat-desc">Toxina Botulínica · Ácido Hialurónico · Sculptra · Exosomas · Vitaminas</p>
+      <span class="trat-cat-cta">Ver tratamientos →</span>
     </a>
-    <a href="corporal.html" style="background:#fff;padding:56px 48px;text-decoration:none;display:block;transition:box-shadow 0.25s;border-left:3px solid var(--gold);" onmouseover="this.style.boxShadow='0 20px 56px rgba(28,58,48,0.1)'" onmouseout="this.style.boxShadow=''">
-      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">02</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--obsidian);margin-bottom:12px;">Remodelación Corporal</h2>
-      <p style="font-size:14px;color:#777;line-height:1.65;margin-bottom:20px;">Lipoescultura sin cirugía · Reafirmante corporal · Drenaje linfático · Push Up</p>
-      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--obsidian);border-bottom:1px solid var(--obsidian);padding-bottom:2px;">Ver tratamientos →</span>
+    <a href="corporal.html" class="trat-cat-card">
+      <div class="trat-cat-num">02</div>
+      <h2 class="trat-cat-title">Remodelación Corporal</h2>
+      <p class="trat-cat-desc">Lipoescultura sin cirugía · Reafirmante corporal · Drenaje linfático · Push Up</p>
+      <span class="trat-cat-cta">Ver tratamientos →</span>
     </a>
-    <a href="laser.html" style="background:#fff;padding:56px 48px;text-decoration:none;display:block;transition:box-shadow 0.25s;border-left:3px solid var(--gold);" onmouseover="this.style.boxShadow='0 20px 56px rgba(28,58,48,0.1)'" onmouseout="this.style.boxShadow=''">
-      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">03</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--obsidian);margin-bottom:12px;">Depilación Láser</h2>
-      <p style="font-size:14px;color:#777;line-height:1.65;margin-bottom:20px;">Depilación Láser Soprano Ice Platinum — apta para todo tipo de piel</p>
-      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--obsidian);border-bottom:1px solid var(--obsidian);padding-bottom:2px;">Ver tratamiento →</span>
+    <a href="laser.html" class="trat-cat-card">
+      <div class="trat-cat-num">03</div>
+      <h2 class="trat-cat-title">Depilación Láser</h2>
+      <p class="trat-cat-desc">Depilación Láser Soprano Ice Platinum — apta para todo tipo de piel</p>
+      <span class="trat-cat-cta">Ver tratamiento →</span>
     </a>
-    <a href="facial.html" style="background:#fff;padding:56px 48px;text-decoration:none;display:block;transition:box-shadow 0.25s;border-left:3px solid var(--gold);" onmouseover="this.style.boxShadow='0 20px 56px rgba(28,58,48,0.1)'" onmouseout="this.style.boxShadow=''">
-      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">04</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--obsidian);margin-bottom:12px;">Tratamientos Faciales</h2>
-      <p style="font-size:14px;color:#777;line-height:1.65;margin-bottom:20px;">Limpieza facial · Rejuvenecimiento · Reducción de papada · EmFusion</p>
-      <span style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--obsidian);border-bottom:1px solid var(--obsidian);padding-bottom:2px;">Ver tratamientos →</span>
+    <a href="facial.html" class="trat-cat-card">
+      <div class="trat-cat-num">04</div>
+      <h2 class="trat-cat-title">Tratamientos Faciales</h2>
+      <p class="trat-cat-desc">Limpieza facial · Rejuvenecimiento · Reducción de papada · EmFusion</p>
+      <span class="trat-cat-cta">Ver tratamientos →</span>
     </a>
   </div>
 </section>

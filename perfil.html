@@ -2407,7 +2407,7 @@ async function handleGoogleAuth() {
   if (!sb) { alert('Error de conexión. Recarga la página.'); return; }
   var { error } = await sb.auth.signInWithOAuth({
     provider: 'google',
-    options: { redirectTo: 'https://theramedspa.cl/perfil.html' }
+    options: { redirectTo: window.location.origin + '/perfil.html' }
   });
   if (error) { alert('Error al conectar con Google: ' + error.message); }
 }
